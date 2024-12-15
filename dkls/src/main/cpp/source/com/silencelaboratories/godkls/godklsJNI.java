@@ -9,7 +9,6 @@
 package com.silencelaboratories.godkls;
 
 public class godklsJNI {
-  public final static native int TEXT_TAG_get();
   public final static native int LIB_ABORT_PROTOCOL_AND_BAN_PARTY_1_get();
   public final static native int LIB_ABORT_PROTOCOL_PARTY_1_get();
   public final static native void tss_buffer_ptr_set(long jarg1, tss_buffer jarg1_, long jarg2);
@@ -57,6 +56,14 @@ public class godklsJNI {
   public final static native int dkls_refresh_share_from_bytes(long jarg1, tss_buffer jarg1_, long jarg2, Handle jarg2_);
   public final static native int dkls_refresh_share_to_bytes(long jarg1, Handle jarg1_, long jarg2, tss_buffer jarg2_);
   public final static native int dkls_keyshare_free(long jarg1, Handle jarg1_);
+  public final static native int dkls_keyshare_chaincode(long jarg1, Handle jarg1_, long jarg2, tss_buffer jarg2_);
+  public final static native int dkls_qc_setupmsg_new(long jarg1, Handle jarg1_, long jarg2, go_slice jarg2_, long jarg3, go_slice jarg3_, long jarg4, long jarg5, go_slice jarg5_, long jarg6, tss_buffer jarg6_);
+  public final static native int dkls_qc_session_from_setup(long jarg1, go_slice jarg1_, long jarg2, go_slice jarg2_, long jarg3, Handle jarg3_, long jarg4, Handle jarg4_);
+  public final static native int dkls_qc_session_input_message(long jarg1, Handle jarg1_, long jarg2, go_slice jarg2_, long jarg3);
+  public final static native int dkls_qc_session_output_message(long jarg1, Handle jarg1_, long jarg2, tss_buffer jarg2_);
+  public final static native int dkls_qc_session_message_receiver(long jarg1, Handle jarg1_, long jarg2, go_slice jarg2_, long jarg3, long jarg4, tss_buffer jarg4_);
+  public final static native int dkls_qc_session_finish(long jarg1, Handle jarg1_, long jarg2, Handle jarg2_);
+  public final static native int dkls_qc_session_free(long jarg1, Handle jarg1_);
   public final static native int dkls_decode_key_id(long jarg1, go_slice jarg1_, long jarg2, tss_buffer jarg2_);
   public final static native int dkls_decode_session_id(long jarg1, go_slice jarg1_, long jarg2, tss_buffer jarg2_);
   public final static native int dkls_decode_message(long jarg1, go_slice jarg1_, long jarg2, tss_buffer jarg2_);
