@@ -4,7 +4,7 @@ project("godkls")
 
 # Define the path to place generated Java sources
 set(JAVA_MODULE_PATH com/silencelaboratories/godkls)
-set(GENERATED_SOURCES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/source/${JAVA_MODULE_PATH})
+set(GENERATED_SOURCES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../java/${JAVA_MODULE_PATH})
 
 # Make sure SWIG is found and included
 find_package(SWIG REQUIRED)
@@ -18,7 +18,7 @@ set(SWIG_INTERFACE interface_file.i)
 set(CMAKE_SWIG_FLAGS -package com.silencelaboratories.godkls)
 
 # Set output directories for SWIG
-set(SWIG_WRAPPER_DIR ${CMAKE_CURRENT_SOURCE_DIR}/source/cpp)
+set(SWIG_WRAPPER_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(SWIG_OUTPUT_DIR ${GENERATED_SOURCES_DIR})
 
 file(MAKE_DIRECTORY ${SWIG_WRAPPER_DIR})
@@ -32,6 +32,7 @@ set_target_properties(libgodkls
         PROPERTIES IMPORTED_LOCATION
         ${CMAKE_CURRENT_SOURCE_DIR}/libs/${ANDROID_ABI}/libgodkls.so)
 
+add_library(buffer_util SHARED buffer_util.c)
 #create swig wrapper
 swig_add_library(
         godklsswig
@@ -42,4 +43,4 @@ swig_add_library(
 )
 
 #link libgodkls to swig
-target_link_libraries(godklsswig libgodkls ${log-lib})
+target_link_libraries(godklsswig libgodkls buffer_util ${log-lib})

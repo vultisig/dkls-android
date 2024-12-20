@@ -226,6 +226,590 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 #define SWIG_contract_assert(nullreturn, expr, msg) do { if (!(expr)) {SWIG_JavaThrowException(jenv, SWIG_JavaIllegalArgumentException, msg); return nullreturn; } } while (0)
 
 
+#include <stdint.h>		// Use the C99 official header
+
+
+#include <stdlib.h>
+#ifdef _MSC_VER
+# ifndef strtoull
+#  define strtoull _strtoui64
+# endif
+# ifndef strtoll
+#  define strtoll _strtoi64
+# endif
+#endif
+
+
+#if defined(SWIG_NOINCLUDE) || defined(SWIG_NOARRAYS)
+
+
+static int SWIG_JavaArrayInSchar (JNIEnv *jenv, jbyte **jarr, signed char **carr, jbyteArray input);
+static void SWIG_JavaArrayArgoutSchar (JNIEnv *jenv, jbyte *jarr, signed char *carr, jbyteArray input);
+static jbyteArray SWIG_JavaArrayOutSchar (JNIEnv *jenv, signed char *result, jsize sz);
+
+
+static int SWIG_JavaArrayInUchar (JNIEnv *jenv, jshort **jarr, unsigned char **carr, jshortArray input);
+static void SWIG_JavaArrayArgoutUchar (JNIEnv *jenv, jshort *jarr, unsigned char *carr, jshortArray input);
+static jshortArray SWIG_JavaArrayOutUchar (JNIEnv *jenv, unsigned char *result, jsize sz);
+
+
+static int SWIG_JavaArrayInShort (JNIEnv *jenv, jshort **jarr, short **carr, jshortArray input);
+static void SWIG_JavaArrayArgoutShort (JNIEnv *jenv, jshort *jarr, short *carr, jshortArray input);
+static jshortArray SWIG_JavaArrayOutShort (JNIEnv *jenv, short *result, jsize sz);
+
+
+static int SWIG_JavaArrayInUshort (JNIEnv *jenv, jint **jarr, unsigned short **carr, jintArray input);
+static void SWIG_JavaArrayArgoutUshort (JNIEnv *jenv, jint *jarr, unsigned short *carr, jintArray input);
+static jintArray SWIG_JavaArrayOutUshort (JNIEnv *jenv, unsigned short *result, jsize sz);
+
+
+static int SWIG_JavaArrayInInt (JNIEnv *jenv, jint **jarr, int **carr, jintArray input);
+static void SWIG_JavaArrayArgoutInt (JNIEnv *jenv, jint *jarr, int *carr, jintArray input);
+static jintArray SWIG_JavaArrayOutInt (JNIEnv *jenv, int *result, jsize sz);
+
+
+static int SWIG_JavaArrayInUint (JNIEnv *jenv, jlong **jarr, unsigned int **carr, jlongArray input);
+static void SWIG_JavaArrayArgoutUint (JNIEnv *jenv, jlong *jarr, unsigned int *carr, jlongArray input);
+static jlongArray SWIG_JavaArrayOutUint (JNIEnv *jenv, unsigned int *result, jsize sz);
+
+
+static int SWIG_JavaArrayInLong (JNIEnv *jenv, jint **jarr, long **carr, jintArray input);
+static void SWIG_JavaArrayArgoutLong (JNIEnv *jenv, jint *jarr, long *carr, jintArray input);
+static jintArray SWIG_JavaArrayOutLong (JNIEnv *jenv, long *result, jsize sz);
+
+
+static int SWIG_JavaArrayInUlong (JNIEnv *jenv, jlong **jarr, unsigned long **carr, jlongArray input);
+static void SWIG_JavaArrayArgoutUlong (JNIEnv *jenv, jlong *jarr, unsigned long *carr, jlongArray input);
+static jlongArray SWIG_JavaArrayOutUlong (JNIEnv *jenv, unsigned long *result, jsize sz);
+
+
+static int SWIG_JavaArrayInLonglong (JNIEnv *jenv, jlong **jarr, long long **carr, jlongArray input);
+static void SWIG_JavaArrayArgoutLonglong (JNIEnv *jenv, jlong *jarr, long long *carr, jlongArray input);
+static jlongArray SWIG_JavaArrayOutLonglong (JNIEnv *jenv, long long *result, jsize sz);
+
+
+static int SWIG_JavaArrayInFloat (JNIEnv *jenv, jfloat **jarr, float **carr, jfloatArray input);
+static void SWIG_JavaArrayArgoutFloat (JNIEnv *jenv, jfloat *jarr, float *carr, jfloatArray input);
+static jfloatArray SWIG_JavaArrayOutFloat (JNIEnv *jenv, float *result, jsize sz);
+
+
+static int SWIG_JavaArrayInDouble (JNIEnv *jenv, jdouble **jarr, double **carr, jdoubleArray input);
+static void SWIG_JavaArrayArgoutDouble (JNIEnv *jenv, jdouble *jarr, double *carr, jdoubleArray input);
+static jdoubleArray SWIG_JavaArrayOutDouble (JNIEnv *jenv, double *result, jsize sz);
+
+
+#else
+
+
+/* signed char[] support */
+static int SWIG_JavaArrayInSchar (JNIEnv *jenv, jbyte **jarr, signed char **carr, jbyteArray input) {
+  int i;
+  jsize sz;
+  if (!input) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null array");
+    return 0;
+  }
+  sz = (*jenv)->GetArrayLength(jenv, input);
+  *jarr = (*jenv)->GetByteArrayElements(jenv, input, 0);
+  if (!*jarr)
+    return 0; 
+  *carr = (signed char*) malloc(sz * sizeof(signed char)); 
+  if (!*carr) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaOutOfMemoryError, "array memory allocation failed");
+    return 0;
+  }
+  for (i=0; i<sz; i++)
+    (*carr)[i] = (signed char)(*jarr)[i];
+  return 1;
+}
+
+static void SWIG_JavaArrayArgoutSchar (JNIEnv *jenv, jbyte *jarr, signed char *carr, jbyteArray input) {
+  int i;
+  jsize sz = (*jenv)->GetArrayLength(jenv, input);
+  for (i=0; i<sz; i++)
+    jarr[i] = (jbyte)carr[i];
+  (*jenv)->ReleaseByteArrayElements(jenv, input, jarr, 0);
+}
+
+static jbyteArray SWIG_JavaArrayOutSchar (JNIEnv *jenv, signed char *result, jsize sz) {
+  jbyte *arr;
+  int i;
+  jbyteArray jresult = (*jenv)->NewByteArray(jenv, sz);
+  if (!jresult)
+    return NULL;
+  arr = (*jenv)->GetByteArrayElements(jenv, jresult, 0);
+  if (!arr)
+    return NULL;
+  for (i=0; i<sz; i++)
+    arr[i] = (jbyte)result[i];
+  (*jenv)->ReleaseByteArrayElements(jenv, jresult, arr, 0);
+  return jresult;
+}
+
+
+/* unsigned char[] support */
+static int SWIG_JavaArrayInUchar (JNIEnv *jenv, jshort **jarr, unsigned char **carr, jshortArray input) {
+  int i;
+  jsize sz;
+  if (!input) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null array");
+    return 0;
+  }
+  sz = (*jenv)->GetArrayLength(jenv, input);
+  *jarr = (*jenv)->GetShortArrayElements(jenv, input, 0);
+  if (!*jarr)
+    return 0; 
+  *carr = (unsigned char*) malloc(sz * sizeof(unsigned char)); 
+  if (!*carr) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaOutOfMemoryError, "array memory allocation failed");
+    return 0;
+  }
+  for (i=0; i<sz; i++)
+    (*carr)[i] = (unsigned char)(*jarr)[i];
+  return 1;
+}
+
+static void SWIG_JavaArrayArgoutUchar (JNIEnv *jenv, jshort *jarr, unsigned char *carr, jshortArray input) {
+  int i;
+  jsize sz = (*jenv)->GetArrayLength(jenv, input);
+  for (i=0; i<sz; i++)
+    jarr[i] = (jshort)carr[i];
+  (*jenv)->ReleaseShortArrayElements(jenv, input, jarr, 0);
+}
+
+static jshortArray SWIG_JavaArrayOutUchar (JNIEnv *jenv, unsigned char *result, jsize sz) {
+  jshort *arr;
+  int i;
+  jshortArray jresult = (*jenv)->NewShortArray(jenv, sz);
+  if (!jresult)
+    return NULL;
+  arr = (*jenv)->GetShortArrayElements(jenv, jresult, 0);
+  if (!arr)
+    return NULL;
+  for (i=0; i<sz; i++)
+    arr[i] = (jshort)result[i];
+  (*jenv)->ReleaseShortArrayElements(jenv, jresult, arr, 0);
+  return jresult;
+}
+
+
+/* short[] support */
+static int SWIG_JavaArrayInShort (JNIEnv *jenv, jshort **jarr, short **carr, jshortArray input) {
+  int i;
+  jsize sz;
+  if (!input) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null array");
+    return 0;
+  }
+  sz = (*jenv)->GetArrayLength(jenv, input);
+  *jarr = (*jenv)->GetShortArrayElements(jenv, input, 0);
+  if (!*jarr)
+    return 0; 
+  *carr = (short*) malloc(sz * sizeof(short)); 
+  if (!*carr) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaOutOfMemoryError, "array memory allocation failed");
+    return 0;
+  }
+  for (i=0; i<sz; i++)
+    (*carr)[i] = (short)(*jarr)[i];
+  return 1;
+}
+
+static void SWIG_JavaArrayArgoutShort (JNIEnv *jenv, jshort *jarr, short *carr, jshortArray input) {
+  int i;
+  jsize sz = (*jenv)->GetArrayLength(jenv, input);
+  for (i=0; i<sz; i++)
+    jarr[i] = (jshort)carr[i];
+  (*jenv)->ReleaseShortArrayElements(jenv, input, jarr, 0);
+}
+
+static jshortArray SWIG_JavaArrayOutShort (JNIEnv *jenv, short *result, jsize sz) {
+  jshort *arr;
+  int i;
+  jshortArray jresult = (*jenv)->NewShortArray(jenv, sz);
+  if (!jresult)
+    return NULL;
+  arr = (*jenv)->GetShortArrayElements(jenv, jresult, 0);
+  if (!arr)
+    return NULL;
+  for (i=0; i<sz; i++)
+    arr[i] = (jshort)result[i];
+  (*jenv)->ReleaseShortArrayElements(jenv, jresult, arr, 0);
+  return jresult;
+}
+
+
+/* unsigned short[] support */
+static int SWIG_JavaArrayInUshort (JNIEnv *jenv, jint **jarr, unsigned short **carr, jintArray input) {
+  int i;
+  jsize sz;
+  if (!input) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null array");
+    return 0;
+  }
+  sz = (*jenv)->GetArrayLength(jenv, input);
+  *jarr = (*jenv)->GetIntArrayElements(jenv, input, 0);
+  if (!*jarr)
+    return 0; 
+  *carr = (unsigned short*) malloc(sz * sizeof(unsigned short)); 
+  if (!*carr) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaOutOfMemoryError, "array memory allocation failed");
+    return 0;
+  }
+  for (i=0; i<sz; i++)
+    (*carr)[i] = (unsigned short)(*jarr)[i];
+  return 1;
+}
+
+static void SWIG_JavaArrayArgoutUshort (JNIEnv *jenv, jint *jarr, unsigned short *carr, jintArray input) {
+  int i;
+  jsize sz = (*jenv)->GetArrayLength(jenv, input);
+  for (i=0; i<sz; i++)
+    jarr[i] = (jint)carr[i];
+  (*jenv)->ReleaseIntArrayElements(jenv, input, jarr, 0);
+}
+
+static jintArray SWIG_JavaArrayOutUshort (JNIEnv *jenv, unsigned short *result, jsize sz) {
+  jint *arr;
+  int i;
+  jintArray jresult = (*jenv)->NewIntArray(jenv, sz);
+  if (!jresult)
+    return NULL;
+  arr = (*jenv)->GetIntArrayElements(jenv, jresult, 0);
+  if (!arr)
+    return NULL;
+  for (i=0; i<sz; i++)
+    arr[i] = (jint)result[i];
+  (*jenv)->ReleaseIntArrayElements(jenv, jresult, arr, 0);
+  return jresult;
+}
+
+
+/* int[] support */
+static int SWIG_JavaArrayInInt (JNIEnv *jenv, jint **jarr, int **carr, jintArray input) {
+  int i;
+  jsize sz;
+  if (!input) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null array");
+    return 0;
+  }
+  sz = (*jenv)->GetArrayLength(jenv, input);
+  *jarr = (*jenv)->GetIntArrayElements(jenv, input, 0);
+  if (!*jarr)
+    return 0; 
+  *carr = (int*) malloc(sz * sizeof(int)); 
+  if (!*carr) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaOutOfMemoryError, "array memory allocation failed");
+    return 0;
+  }
+  for (i=0; i<sz; i++)
+    (*carr)[i] = (int)(*jarr)[i];
+  return 1;
+}
+
+static void SWIG_JavaArrayArgoutInt (JNIEnv *jenv, jint *jarr, int *carr, jintArray input) {
+  int i;
+  jsize sz = (*jenv)->GetArrayLength(jenv, input);
+  for (i=0; i<sz; i++)
+    jarr[i] = (jint)carr[i];
+  (*jenv)->ReleaseIntArrayElements(jenv, input, jarr, 0);
+}
+
+static jintArray SWIG_JavaArrayOutInt (JNIEnv *jenv, int *result, jsize sz) {
+  jint *arr;
+  int i;
+  jintArray jresult = (*jenv)->NewIntArray(jenv, sz);
+  if (!jresult)
+    return NULL;
+  arr = (*jenv)->GetIntArrayElements(jenv, jresult, 0);
+  if (!arr)
+    return NULL;
+  for (i=0; i<sz; i++)
+    arr[i] = (jint)result[i];
+  (*jenv)->ReleaseIntArrayElements(jenv, jresult, arr, 0);
+  return jresult;
+}
+
+
+/* unsigned int[] support */
+static int SWIG_JavaArrayInUint (JNIEnv *jenv, jlong **jarr, unsigned int **carr, jlongArray input) {
+  int i;
+  jsize sz;
+  if (!input) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null array");
+    return 0;
+  }
+  sz = (*jenv)->GetArrayLength(jenv, input);
+  *jarr = (*jenv)->GetLongArrayElements(jenv, input, 0);
+  if (!*jarr)
+    return 0; 
+  *carr = (unsigned int*) malloc(sz * sizeof(unsigned int)); 
+  if (!*carr) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaOutOfMemoryError, "array memory allocation failed");
+    return 0;
+  }
+  for (i=0; i<sz; i++)
+    (*carr)[i] = (unsigned int)(*jarr)[i];
+  return 1;
+}
+
+static void SWIG_JavaArrayArgoutUint (JNIEnv *jenv, jlong *jarr, unsigned int *carr, jlongArray input) {
+  int i;
+  jsize sz = (*jenv)->GetArrayLength(jenv, input);
+  for (i=0; i<sz; i++)
+    jarr[i] = (jlong)carr[i];
+  (*jenv)->ReleaseLongArrayElements(jenv, input, jarr, 0);
+}
+
+static jlongArray SWIG_JavaArrayOutUint (JNIEnv *jenv, unsigned int *result, jsize sz) {
+  jlong *arr;
+  int i;
+  jlongArray jresult = (*jenv)->NewLongArray(jenv, sz);
+  if (!jresult)
+    return NULL;
+  arr = (*jenv)->GetLongArrayElements(jenv, jresult, 0);
+  if (!arr)
+    return NULL;
+  for (i=0; i<sz; i++)
+    arr[i] = (jlong)result[i];
+  (*jenv)->ReleaseLongArrayElements(jenv, jresult, arr, 0);
+  return jresult;
+}
+
+
+/* long[] support */
+static int SWIG_JavaArrayInLong (JNIEnv *jenv, jint **jarr, long **carr, jintArray input) {
+  int i;
+  jsize sz;
+  if (!input) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null array");
+    return 0;
+  }
+  sz = (*jenv)->GetArrayLength(jenv, input);
+  *jarr = (*jenv)->GetIntArrayElements(jenv, input, 0);
+  if (!*jarr)
+    return 0; 
+  *carr = (long*) malloc(sz * sizeof(long)); 
+  if (!*carr) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaOutOfMemoryError, "array memory allocation failed");
+    return 0;
+  }
+  for (i=0; i<sz; i++)
+    (*carr)[i] = (long)(*jarr)[i];
+  return 1;
+}
+
+static void SWIG_JavaArrayArgoutLong (JNIEnv *jenv, jint *jarr, long *carr, jintArray input) {
+  int i;
+  jsize sz = (*jenv)->GetArrayLength(jenv, input);
+  for (i=0; i<sz; i++)
+    jarr[i] = (jint)carr[i];
+  (*jenv)->ReleaseIntArrayElements(jenv, input, jarr, 0);
+}
+
+static jintArray SWIG_JavaArrayOutLong (JNIEnv *jenv, long *result, jsize sz) {
+  jint *arr;
+  int i;
+  jintArray jresult = (*jenv)->NewIntArray(jenv, sz);
+  if (!jresult)
+    return NULL;
+  arr = (*jenv)->GetIntArrayElements(jenv, jresult, 0);
+  if (!arr)
+    return NULL;
+  for (i=0; i<sz; i++)
+    arr[i] = (jint)result[i];
+  (*jenv)->ReleaseIntArrayElements(jenv, jresult, arr, 0);
+  return jresult;
+}
+
+
+/* unsigned long[] support */
+static int SWIG_JavaArrayInUlong (JNIEnv *jenv, jlong **jarr, unsigned long **carr, jlongArray input) {
+  int i;
+  jsize sz;
+  if (!input) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null array");
+    return 0;
+  }
+  sz = (*jenv)->GetArrayLength(jenv, input);
+  *jarr = (*jenv)->GetLongArrayElements(jenv, input, 0);
+  if (!*jarr)
+    return 0; 
+  *carr = (unsigned long*) malloc(sz * sizeof(unsigned long)); 
+  if (!*carr) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaOutOfMemoryError, "array memory allocation failed");
+    return 0;
+  }
+  for (i=0; i<sz; i++)
+    (*carr)[i] = (unsigned long)(*jarr)[i];
+  return 1;
+}
+
+static void SWIG_JavaArrayArgoutUlong (JNIEnv *jenv, jlong *jarr, unsigned long *carr, jlongArray input) {
+  int i;
+  jsize sz = (*jenv)->GetArrayLength(jenv, input);
+  for (i=0; i<sz; i++)
+    jarr[i] = (jlong)carr[i];
+  (*jenv)->ReleaseLongArrayElements(jenv, input, jarr, 0);
+}
+
+static jlongArray SWIG_JavaArrayOutUlong (JNIEnv *jenv, unsigned long *result, jsize sz) {
+  jlong *arr;
+  int i;
+  jlongArray jresult = (*jenv)->NewLongArray(jenv, sz);
+  if (!jresult)
+    return NULL;
+  arr = (*jenv)->GetLongArrayElements(jenv, jresult, 0);
+  if (!arr)
+    return NULL;
+  for (i=0; i<sz; i++)
+    arr[i] = (jlong)result[i];
+  (*jenv)->ReleaseLongArrayElements(jenv, jresult, arr, 0);
+  return jresult;
+}
+
+
+/* long long[] support */
+static int SWIG_JavaArrayInLonglong (JNIEnv *jenv, jlong **jarr, long long **carr, jlongArray input) {
+  int i;
+  jsize sz;
+  if (!input) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null array");
+    return 0;
+  }
+  sz = (*jenv)->GetArrayLength(jenv, input);
+  *jarr = (*jenv)->GetLongArrayElements(jenv, input, 0);
+  if (!*jarr)
+    return 0; 
+  *carr = (long long*) malloc(sz * sizeof(long long)); 
+  if (!*carr) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaOutOfMemoryError, "array memory allocation failed");
+    return 0;
+  }
+  for (i=0; i<sz; i++)
+    (*carr)[i] = (long long)(*jarr)[i];
+  return 1;
+}
+
+static void SWIG_JavaArrayArgoutLonglong (JNIEnv *jenv, jlong *jarr, long long *carr, jlongArray input) {
+  int i;
+  jsize sz = (*jenv)->GetArrayLength(jenv, input);
+  for (i=0; i<sz; i++)
+    jarr[i] = (jlong)carr[i];
+  (*jenv)->ReleaseLongArrayElements(jenv, input, jarr, 0);
+}
+
+static jlongArray SWIG_JavaArrayOutLonglong (JNIEnv *jenv, long long *result, jsize sz) {
+  jlong *arr;
+  int i;
+  jlongArray jresult = (*jenv)->NewLongArray(jenv, sz);
+  if (!jresult)
+    return NULL;
+  arr = (*jenv)->GetLongArrayElements(jenv, jresult, 0);
+  if (!arr)
+    return NULL;
+  for (i=0; i<sz; i++)
+    arr[i] = (jlong)result[i];
+  (*jenv)->ReleaseLongArrayElements(jenv, jresult, arr, 0);
+  return jresult;
+}
+
+
+/* float[] support */
+static int SWIG_JavaArrayInFloat (JNIEnv *jenv, jfloat **jarr, float **carr, jfloatArray input) {
+  int i;
+  jsize sz;
+  if (!input) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null array");
+    return 0;
+  }
+  sz = (*jenv)->GetArrayLength(jenv, input);
+  *jarr = (*jenv)->GetFloatArrayElements(jenv, input, 0);
+  if (!*jarr)
+    return 0; 
+  *carr = (float*) malloc(sz * sizeof(float)); 
+  if (!*carr) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaOutOfMemoryError, "array memory allocation failed");
+    return 0;
+  }
+  for (i=0; i<sz; i++)
+    (*carr)[i] = (float)(*jarr)[i];
+  return 1;
+}
+
+static void SWIG_JavaArrayArgoutFloat (JNIEnv *jenv, jfloat *jarr, float *carr, jfloatArray input) {
+  int i;
+  jsize sz = (*jenv)->GetArrayLength(jenv, input);
+  for (i=0; i<sz; i++)
+    jarr[i] = (jfloat)carr[i];
+  (*jenv)->ReleaseFloatArrayElements(jenv, input, jarr, 0);
+}
+
+static jfloatArray SWIG_JavaArrayOutFloat (JNIEnv *jenv, float *result, jsize sz) {
+  jfloat *arr;
+  int i;
+  jfloatArray jresult = (*jenv)->NewFloatArray(jenv, sz);
+  if (!jresult)
+    return NULL;
+  arr = (*jenv)->GetFloatArrayElements(jenv, jresult, 0);
+  if (!arr)
+    return NULL;
+  for (i=0; i<sz; i++)
+    arr[i] = (jfloat)result[i];
+  (*jenv)->ReleaseFloatArrayElements(jenv, jresult, arr, 0);
+  return jresult;
+}
+
+
+/* double[] support */
+static int SWIG_JavaArrayInDouble (JNIEnv *jenv, jdouble **jarr, double **carr, jdoubleArray input) {
+  int i;
+  jsize sz;
+  if (!input) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "null array");
+    return 0;
+  }
+  sz = (*jenv)->GetArrayLength(jenv, input);
+  *jarr = (*jenv)->GetDoubleArrayElements(jenv, input, 0);
+  if (!*jarr)
+    return 0; 
+  *carr = (double*) malloc(sz * sizeof(double)); 
+  if (!*carr) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaOutOfMemoryError, "array memory allocation failed");
+    return 0;
+  }
+  for (i=0; i<sz; i++)
+    (*carr)[i] = (double)(*jarr)[i];
+  return 1;
+}
+
+static void SWIG_JavaArrayArgoutDouble (JNIEnv *jenv, jdouble *jarr, double *carr, jdoubleArray input) {
+  int i;
+  jsize sz = (*jenv)->GetArrayLength(jenv, input);
+  for (i=0; i<sz; i++)
+    jarr[i] = (jdouble)carr[i];
+  (*jenv)->ReleaseDoubleArrayElements(jenv, input, jarr, 0);
+}
+
+static jdoubleArray SWIG_JavaArrayOutDouble (JNIEnv *jenv, double *result, jsize sz) {
+  jdouble *arr;
+  int i;
+  jdoubleArray jresult = (*jenv)->NewDoubleArray(jenv, sz);
+  if (!jresult)
+    return NULL;
+  arr = (*jenv)->GetDoubleArrayElements(jenv, jresult, 0);
+  if (!arr)
+    return NULL;
+  for (i=0; i<sz; i++)
+    arr[i] = (jdouble)result[i];
+  (*jenv)->ReleaseDoubleArrayElements(jenv, jresult, arr, 0);
+  return jresult;
+}
+
+
+#endif
+
+
 #include "go-dkls.h"
 
 
@@ -265,7 +849,7 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_godkls_godklsJNI_tss_1buffe
   (void)jcls;
   (void)jarg1_;
   arg1 = *(struct tss_buffer **)&jarg1; 
-  arg2 = *(uint8_t **)&jarg2; 
+  arg2 = (uint8_t *)jarg2; 
   if (arg1) (arg1)->ptr = (uint8_t const *)arg2;
 }
 
@@ -280,7 +864,7 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godkls_godklsJNI_tss_1buff
   (void)jarg1_;
   arg1 = *(struct tss_buffer **)&jarg1; 
   result = (uint8_t *) ((arg1)->ptr);
-  *(uint8_t **)&jresult = result; 
+  jresult = (jlong)result; 
   return jresult;
 }
 
@@ -288,18 +872,12 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godkls_godklsJNI_tss_1buff
 SWIGEXPORT void JNICALL Java_com_silencelaboratories_godkls_godklsJNI_tss_1buffer_1len_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   struct tss_buffer *arg1 = (struct tss_buffer *) 0 ;
   uintptr_t arg2 ;
-  uintptr_t *argp2 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
   arg1 = *(struct tss_buffer **)&jarg1; 
-  argp2 = *(uintptr_t **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null uintptr_t");
-    return ;
-  }
-  arg2 = *argp2; 
+  arg2 = (uintptr_t)jarg2; 
   if (arg1) (arg1)->len = arg2;
 }
 
@@ -313,12 +891,8 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godkls_godklsJNI_tss_1buff
   (void)jcls;
   (void)jarg1_;
   arg1 = *(struct tss_buffer **)&jarg1; 
-  result =  ((arg1)->len);
-  {
-    uintptr_t * resultptr = (uintptr_t *) malloc(sizeof(uintptr_t));
-    memmove(resultptr, &result, sizeof(uintptr_t));
-    *(uintptr_t **)&jresult = resultptr;
-  }
+  result = (uintptr_t) ((arg1)->len);
+  jresult = (jlong)result; 
   return jresult;
 }
 
@@ -353,7 +927,7 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_godkls_godklsJNI_go_1slice_
   (void)jcls;
   (void)jarg1_;
   arg1 = *(struct go_slice **)&jarg1; 
-  arg2 = *(uint8_t **)&jarg2; 
+  arg2 = (uint8_t *)jarg2; 
   if (arg1) (arg1)->ptr = (uint8_t const *)arg2;
 }
 
@@ -368,7 +942,7 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godkls_godklsJNI_go_1slice
   (void)jarg1_;
   arg1 = *(struct go_slice **)&jarg1; 
   result = (uint8_t *) ((arg1)->ptr);
-  *(uint8_t **)&jresult = result; 
+  jresult = (jlong)result; 
   return jresult;
 }
 
@@ -376,18 +950,12 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godkls_godklsJNI_go_1slice
 SWIGEXPORT void JNICALL Java_com_silencelaboratories_godkls_godklsJNI_go_1slice_1len_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   struct go_slice *arg1 = (struct go_slice *) 0 ;
   uintptr_t arg2 ;
-  uintptr_t *argp2 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
   arg1 = *(struct go_slice **)&jarg1; 
-  argp2 = *(uintptr_t **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null uintptr_t");
-    return ;
-  }
-  arg2 = *argp2; 
+  arg2 = (uintptr_t)jarg2; 
   if (arg1) (arg1)->len = arg2;
 }
 
@@ -401,12 +969,8 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godkls_godklsJNI_go_1slice
   (void)jcls;
   (void)jarg1_;
   arg1 = *(struct go_slice **)&jarg1; 
-  result =  ((arg1)->len);
-  {
-    uintptr_t * resultptr = (uintptr_t *) malloc(sizeof(uintptr_t));
-    memmove(resultptr, &result, sizeof(uintptr_t));
-    *(uintptr_t **)&jresult = resultptr;
-  }
+  result = (uintptr_t) ((arg1)->len);
+  jresult = (jlong)result; 
   return jresult;
 }
 
@@ -414,18 +978,12 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godkls_godklsJNI_go_1slice
 SWIGEXPORT void JNICALL Java_com_silencelaboratories_godkls_godklsJNI_go_1slice_1cap_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   struct go_slice *arg1 = (struct go_slice *) 0 ;
   uintptr_t arg2 ;
-  uintptr_t *argp2 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
   arg1 = *(struct go_slice **)&jarg1; 
-  argp2 = *(uintptr_t **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null uintptr_t");
-    return ;
-  }
-  arg2 = *argp2; 
+  arg2 = (uintptr_t)jarg2; 
   if (arg1) (arg1)->cap = arg2;
 }
 
@@ -439,12 +997,8 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godkls_godklsJNI_go_1slice
   (void)jcls;
   (void)jarg1_;
   arg1 = *(struct go_slice **)&jarg1; 
-  result =  ((arg1)->cap);
-  {
-    uintptr_t * resultptr = (uintptr_t *) malloc(sizeof(uintptr_t));
-    memmove(resultptr, &result, sizeof(uintptr_t));
-    *(uintptr_t **)&jresult = resultptr;
-  }
+  result = (uintptr_t) ((arg1)->cap);
+  jresult = (jlong)result; 
   return jresult;
 }
 
@@ -471,27 +1025,21 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_godkls_godklsJNI_delete_1go
 }
 
 
-SWIGEXPORT void JNICALL Java_com_silencelaboratories_godkls_godklsJNI_Handle_1_10_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_com_silencelaboratories_godkls_godklsJNI_Handle_1_10_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   struct Handle *arg1 = (struct Handle *) 0 ;
   int32_t arg2 ;
-  int32_t *argp2 ;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
   arg1 = *(struct Handle **)&jarg1; 
-  argp2 = *(int32_t **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null int32_t");
-    return ;
-  }
-  arg2 = *argp2; 
+  arg2 = (int32_t)jarg2; 
   if (arg1) (arg1)->_0 = arg2;
 }
 
 
-SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godkls_godklsJNI_Handle_1_10_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
-  jlong jresult = 0 ;
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_Handle_1_10_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jint jresult = 0 ;
   struct Handle *arg1 = (struct Handle *) 0 ;
   int32_t result;
   
@@ -499,12 +1047,8 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godkls_godklsJNI_Handle_1_
   (void)jcls;
   (void)jarg1_;
   arg1 = *(struct Handle **)&jarg1; 
-  result =  ((arg1)->_0);
-  {
-    int32_t * resultptr = (int32_t *) malloc(sizeof(int32_t));
-    memmove(resultptr, &result, sizeof(int32_t));
-    *(int32_t **)&jresult = resultptr;
-  }
+  result = (int32_t) ((arg1)->_0);
+  jresult = (jint)result; 
   return jresult;
 }
 
@@ -548,7 +1092,6 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1keyg
   struct go_slice *arg2 = (struct go_slice *) 0 ;
   struct go_slice *arg3 = (struct go_slice *) 0 ;
   struct tss_buffer *arg4 = (struct tss_buffer *) 0 ;
-  uint32_t *argp1 ;
   enum lib_error result;
   
   (void)jenv;
@@ -556,12 +1099,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1keyg
   (void)jarg2_;
   (void)jarg3_;
   (void)jarg4_;
-  argp1 = *(uint32_t **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null uint32_t");
-    return 0;
-  }
-  arg1 = *argp1; 
+  arg1 = (uint32_t)jarg1; 
   arg2 = *(struct go_slice **)&jarg2; 
   arg3 = *(struct go_slice **)&jarg3; 
   arg4 = *(struct tss_buffer **)&jarg4; 
@@ -679,7 +1217,6 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1keyg
   uint32_t arg3 ;
   struct tss_buffer *arg4 = (struct tss_buffer *) 0 ;
   struct Handle *argp1 ;
-  uint32_t *argp3 ;
   enum lib_error result;
   
   (void)jenv;
@@ -694,12 +1231,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1keyg
   }
   arg1 = *argp1; 
   arg2 = *(struct go_slice **)&jarg2; 
-  argp3 = *(uint32_t **)&jarg3; 
-  if (!argp3) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null uint32_t");
-    return 0;
-  }
-  arg3 = *argp3; 
+  arg3 = (uint32_t)jarg3; 
   arg4 = *(struct tss_buffer **)&jarg4; 
   result = (enum lib_error)dkls_keygen_session_message_receiver(arg1,(struct go_slice const *)arg2,arg3,arg4);
   jresult = (jint)result; 
@@ -925,14 +1457,13 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1key_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1key_1import_1initiator_1new(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1key_1import_1initiator_1new(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jshort jarg2, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_) {
   jint jresult = 0 ;
   struct go_slice *arg1 = (struct go_slice *) 0 ;
   uint8_t arg2 ;
   struct go_slice *arg3 = (struct go_slice *) 0 ;
   struct tss_buffer *arg4 = (struct tss_buffer *) 0 ;
   struct Handle *arg5 = (struct Handle *) 0 ;
-  uint8_t *argp2 ;
   enum lib_error result;
   
   (void)jenv;
@@ -942,12 +1473,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1key_
   (void)jarg4_;
   (void)jarg5_;
   arg1 = *(struct go_slice **)&jarg1; 
-  argp2 = *(uint8_t **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null uint8_t");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = (uint8_t)jarg2; 
   arg3 = *(struct go_slice **)&jarg3; 
   arg4 = *(struct tss_buffer **)&jarg4; 
   arg5 = *(struct Handle **)&jarg5; 
@@ -1209,7 +1735,6 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1qc_1
   struct go_slice *arg5 = (struct go_slice *) 0 ;
   struct tss_buffer *arg6 = (struct tss_buffer *) 0 ;
   struct Handle *argp1 ;
-  uint32_t *argp4 ;
   enum lib_error result;
   
   (void)jenv;
@@ -1227,12 +1752,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1qc_1
   arg1 = *argp1; 
   arg2 = *(struct go_slice **)&jarg2; 
   arg3 = *(struct go_slice **)&jarg3; 
-  argp4 = *(uint32_t **)&jarg4; 
-  if (!argp4) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null uint32_t");
-    return 0;
-  }
-  arg4 = *argp4; 
+  arg4 = (uint32_t)jarg4; 
   arg5 = *(struct go_slice **)&jarg5; 
   arg6 = *(struct tss_buffer **)&jarg6; 
   result = (enum lib_error)dkls_qc_setupmsg_new(arg1,(struct go_slice const *)arg2,(struct go_slice const *)arg3,arg4,(struct go_slice const *)arg5,arg6);
@@ -1328,7 +1848,6 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1qc_1
   uint32_t arg3 ;
   struct tss_buffer *arg4 = (struct tss_buffer *) 0 ;
   struct Handle *argp1 ;
-  uint32_t *argp3 ;
   enum lib_error result;
   
   (void)jenv;
@@ -1343,12 +1862,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1qc_1
   }
   arg1 = *argp1; 
   arg2 = *(struct go_slice **)&jarg2; 
-  argp3 = *(uint32_t **)&jarg3; 
-  if (!argp3) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null uint32_t");
-    return 0;
-  }
-  arg3 = *argp3; 
+  arg3 = (uint32_t)jarg3; 
   arg4 = *(struct tss_buffer **)&jarg4; 
   result = (enum lib_error)dkls_qc_session_message_receiver(arg1,(struct go_slice const *)arg2,arg3,arg4);
   jresult = (jint)result; 
@@ -1454,7 +1968,6 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1deco
   struct go_slice *arg1 = (struct go_slice *) 0 ;
   uint32_t arg2 ;
   struct tss_buffer *arg3 = (struct tss_buffer *) 0 ;
-  uint32_t *argp2 ;
   enum lib_error result;
   
   (void)jenv;
@@ -1462,12 +1975,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1deco
   (void)jarg1_;
   (void)jarg3_;
   arg1 = *(struct go_slice **)&jarg1; 
-  argp2 = *(uint32_t **)&jarg2; 
-  if (!argp2) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null uint32_t");
-    return 0;
-  }
-  arg2 = *argp2; 
+  arg2 = (uint32_t)jarg2; 
   arg3 = *(struct tss_buffer **)&jarg3; 
   result = (enum lib_error)dkls_decode_party_name((struct go_slice const *)arg1,arg2,arg3);
   jresult = (jint)result; 
@@ -1556,12 +2064,13 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1sign
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1sign_1session_1input_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1sign_1session_1input_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jintArray jarg3) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct go_slice *arg2 = (struct go_slice *) 0 ;
   uint32_t *arg3 = (uint32_t *) 0 ;
   struct Handle *argp1 ;
+  jint *jarr3 ;
   enum lib_error result;
   
   (void)jenv;
@@ -1575,9 +2084,11 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1sign
   }
   arg1 = *argp1; 
   arg2 = *(struct go_slice **)&jarg2; 
-  arg3 = *(uint32_t **)&jarg3; 
+  if (!SWIG_JavaArrayInInt(jenv, &jarr3, (uint32_t **)&arg3, jarg3)) return 0; 
   result = (enum lib_error)dkls_sign_session_input_message(arg1,(struct go_slice const *)arg2,arg3);
   jresult = (jint)result; 
+  SWIG_JavaArrayArgoutInt(jenv, jarr3, (uint32_t *)arg3, jarg3); 
+  free(arg3); 
   return jresult;
 }
 
@@ -1613,7 +2124,6 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1sign
   uint32_t arg3 ;
   struct tss_buffer *arg4 = (struct tss_buffer *) 0 ;
   struct Handle *argp1 ;
-  uint32_t *argp3 ;
   enum lib_error result;
   
   (void)jenv;
@@ -1628,12 +2138,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1sign
   }
   arg1 = *argp1; 
   arg2 = *(struct go_slice **)&jarg2; 
-  argp3 = *(uint32_t **)&jarg3; 
-  if (!argp3) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null uint32_t");
-    return 0;
-  }
-  arg3 = *argp3; 
+  arg3 = (uint32_t)jarg3; 
   arg4 = *(struct tss_buffer **)&jarg4; 
   result = (enum lib_error)dkls_sign_session_message_receiver(arg1,(struct go_slice const *)arg2,arg3,arg4);
   jresult = (jint)result; 

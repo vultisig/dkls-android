@@ -8,20 +8,20 @@
 
 package com.silencelaboratories.godkls;
 
-public class Handle {
+public class tss_buffer {
   private transient long swigCPtr;
   protected transient boolean swigCMemOwn;
 
-  protected Handle(long cPtr, boolean cMemoryOwn) {
+  protected tss_buffer(long cPtr, boolean cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = cPtr;
   }
 
-  protected static long getCPtr(Handle obj) {
+  protected static long getCPtr(tss_buffer obj) {
     return (obj == null) ? 0 : obj.swigCPtr;
   }
 
-  protected static long swigRelease(Handle obj) {
+  protected static long swigRelease(tss_buffer obj) {
     long ptr = 0;
     if (obj != null) {
       if (!obj.swigCMemOwn)
@@ -42,22 +42,30 @@ public class Handle {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        godklsJNI.delete_Handle(swigCPtr);
+        godklsJNI.delete_tss_buffer(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
-  public void set_0(SWIGTYPE_p_int32_t value) {
-    godklsJNI.Handle__0_set(swigCPtr, this, SWIGTYPE_p_int32_t.getCPtr(value));
+  public void setPtr(long value) {
+    godklsJNI.tss_buffer_ptr_set(swigCPtr, this, value);
   }
 
-  public SWIGTYPE_p_int32_t get_0() {
-    return new SWIGTYPE_p_int32_t(godklsJNI.Handle__0_get(swigCPtr, this), true);
+  public long getPtr() {
+    return godklsJNI.tss_buffer_ptr_get(swigCPtr, this);
   }
 
-  public Handle() {
-    this(godklsJNI.new_Handle(), true);
+  public void setLen(long value) {
+    godklsJNI.tss_buffer_len_set(swigCPtr, this, value);
+  }
+
+  public long getLen() {
+    return godklsJNI.tss_buffer_len_get(swigCPtr, this);
+  }
+
+  public tss_buffer() {
+    this(godklsJNI.new_tss_buffer(), true);
   }
 
 }

@@ -6,22 +6,22 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package com.silencelaboratories.godkls;
+package com.silencelaboratories.goschnorr;
 
-public class tss_buffer {
+public class Handle {
   private transient long swigCPtr;
   protected transient boolean swigCMemOwn;
 
-  protected tss_buffer(long cPtr, boolean cMemoryOwn) {
+  protected Handle(long cPtr, boolean cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = cPtr;
   }
 
-  protected static long getCPtr(tss_buffer obj) {
+  protected static long getCPtr(Handle obj) {
     return (obj == null) ? 0 : obj.swigCPtr;
   }
 
-  protected static long swigRelease(tss_buffer obj) {
+  protected static long swigRelease(Handle obj) {
     long ptr = 0;
     if (obj != null) {
       if (!obj.swigCMemOwn)
@@ -42,31 +42,22 @@ public class tss_buffer {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        godklsJNI.delete_tss_buffer(swigCPtr);
+        goschnorrJNI.delete_Handle(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
-  public void setPtr(SWIGTYPE_p_uint8_t value) {
-    godklsJNI.tss_buffer_ptr_set(swigCPtr, this, SWIGTYPE_p_uint8_t.getCPtr(value));
+  public void set_0(int value) {
+    goschnorrJNI.Handle__0_set(swigCPtr, this, value);
   }
 
-  public SWIGTYPE_p_uint8_t getPtr() {
-    long cPtr = godklsJNI.tss_buffer_ptr_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_uint8_t(cPtr, false);
+  public int get_0() {
+    return goschnorrJNI.Handle__0_get(swigCPtr, this);
   }
 
-  public void setLen(SWIGTYPE_p_uintptr_t value) {
-    godklsJNI.tss_buffer_len_set(swigCPtr, this, SWIGTYPE_p_uintptr_t.getCPtr(value));
-  }
-
-  public SWIGTYPE_p_uintptr_t getLen() {
-    return new SWIGTYPE_p_uintptr_t(godklsJNI.tss_buffer_len_get(swigCPtr, this), true);
-  }
-
-  public tss_buffer() {
-    this(godklsJNI.new_tss_buffer(), true);
+  public Handle() {
+    this(goschnorrJNI.new_Handle(), true);
   }
 
 }

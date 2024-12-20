@@ -48,21 +48,20 @@ public class tss_buffer {
     }
   }
 
-  public void setPtr(SWIGTYPE_p_uint8_t value) {
-    goschnorrJNI.tss_buffer_ptr_set(swigCPtr, this, SWIGTYPE_p_uint8_t.getCPtr(value));
+  public void setPtr(long value) {
+    goschnorrJNI.tss_buffer_ptr_set(swigCPtr, this, value);
   }
 
-  public SWIGTYPE_p_uint8_t getPtr() {
-    long cPtr = goschnorrJNI.tss_buffer_ptr_get(swigCPtr, this);
-    return (cPtr == 0) ? null : new SWIGTYPE_p_uint8_t(cPtr, false);
+  public long getPtr() {
+    return goschnorrJNI.tss_buffer_ptr_get(swigCPtr, this);
   }
 
-  public void setLen(SWIGTYPE_p_uintptr_t value) {
-    goschnorrJNI.tss_buffer_len_set(swigCPtr, this, SWIGTYPE_p_uintptr_t.getCPtr(value));
+  public void setLen(long value) {
+    goschnorrJNI.tss_buffer_len_set(swigCPtr, this, value);
   }
 
-  public SWIGTYPE_p_uintptr_t getLen() {
-    return new SWIGTYPE_p_uintptr_t(goschnorrJNI.tss_buffer_len_get(swigCPtr, this), true);
+  public long getLen() {
+    return goschnorrJNI.tss_buffer_len_get(swigCPtr, this);
   }
 
   public tss_buffer() {

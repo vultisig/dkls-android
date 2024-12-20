@@ -38,14 +38,6 @@ android {
             version = "3.22.1"
         }
     }
-    sourceSets {
-        named("main") {
-            java.srcDirs(
-                "src/main/cpp/source/com/silencelaboratories/goschnorr"
-            )
-
-        }
-    }
 }
 
 dependencies {

@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package com.silencelaboratories.goschnorr;
+package com.silencelaboratories.godkls;
 
 public class Handle {
   private transient long swigCPtr;
@@ -42,22 +42,22 @@ public class Handle {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        goschnorrJNI.delete_Handle(swigCPtr);
+        godklsJNI.delete_Handle(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
-  public void set_0(SWIGTYPE_p_int32_t value) {
-    goschnorrJNI.Handle__0_set(swigCPtr, this, SWIGTYPE_p_int32_t.getCPtr(value));
+  public void set_0(int value) {
+    godklsJNI.Handle__0_set(swigCPtr, this, value);
   }
 
-  public SWIGTYPE_p_int32_t get_0() {
-    return new SWIGTYPE_p_int32_t(goschnorrJNI.Handle__0_get(swigCPtr, this), true);
+  public int get_0() {
+    return godklsJNI.Handle__0_get(swigCPtr, this);
   }
 
   public Handle() {
-    this(goschnorrJNI.new_Handle(), true);
+    this(godklsJNI.new_Handle(), true);
   }
 
 }
