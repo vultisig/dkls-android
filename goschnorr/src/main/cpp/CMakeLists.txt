@@ -32,7 +32,7 @@ set_target_properties(libgoschnorr
         PROPERTIES IMPORTED_LOCATION
         ${CMAKE_CURRENT_SOURCE_DIR}/libs/${ANDROID_ABI}/libgoschnorr.so)
 
-add_library(buffer_util SHARED buffer_util.c)
+add_library(go_schnorr_buffer_util SHARED buffer_util.c)
 #create swig wrapper
 swig_add_library(
         goschnorrswig
@@ -43,4 +43,4 @@ swig_add_library(
 )
 
 #link libgoschnorr to swig
-target_link_libraries(goschnorrswig libgoschnorr buffer_util ${log-lib})
+target_link_libraries(goschnorrswig libgoschnorr go_schnorr_buffer_util ${log-lib})

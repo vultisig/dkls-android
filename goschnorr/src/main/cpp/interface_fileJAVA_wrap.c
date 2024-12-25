@@ -1160,12 +1160,13 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schn
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1keygen_1session_1input_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1keygen_1session_1input_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jintArray jarg3) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct go_slice *arg2 = (struct go_slice *) 0 ;
   int32_t *arg3 = (int32_t *) 0 ;
   struct Handle *argp1 ;
+  jint *jarr3 ;
   enum lib_error result;
   
   (void)jenv;
@@ -1179,9 +1180,11 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schn
   }
   arg1 = *argp1; 
   arg2 = *(struct go_slice **)&jarg2; 
-  arg3 = *(int32_t **)&jarg3; 
+  if (!SWIG_JavaArrayInInt(jenv, &jarr3, (int32_t **)&arg3, jarg3)) return 0; 
   result = (enum lib_error)schnorr_keygen_session_input_message(arg1,(struct go_slice const *)arg2,arg3);
   jresult = (jint)result; 
+  SWIG_JavaArrayArgoutInt(jenv, jarr3, (int32_t *)arg3, jarg3); 
+  free(arg3); 
   return jresult;
 }
 
@@ -1740,12 +1743,13 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schn
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1export_1receiver_1input_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1export_1receiver_1input_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jintArray jarg3) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct go_slice *arg2 = (struct go_slice *) 0 ;
   int32_t *arg3 = (int32_t *) 0 ;
   struct Handle *argp1 ;
+  jint *jarr3 ;
   enum lib_error result;
   
   (void)jenv;
@@ -1759,9 +1763,11 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schn
   }
   arg1 = *argp1; 
   arg2 = *(struct go_slice **)&jarg2; 
-  arg3 = *(int32_t **)&jarg3; 
+  if (!SWIG_JavaArrayInInt(jenv, &jarr3, (int32_t **)&arg3, jarg3)) return 0; 
   result = (enum lib_error)schnorr_key_export_receiver_input_message(arg1,(struct go_slice const *)arg2,arg3);
   jresult = (jint)result; 
+  SWIG_JavaArrayArgoutInt(jenv, jarr3, (int32_t *)arg3, jarg3); 
+  free(arg3); 
   return jresult;
 }
 

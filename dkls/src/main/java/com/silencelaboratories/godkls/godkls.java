@@ -25,8 +25,8 @@ public class godkls {
     return lib_error.swigToEnum(godklsJNI.dkls_key_refresh_session_from_setup(go_slice.getCPtr(setup), setup, go_slice.getCPtr(id), id, Handle.getCPtr(old_keyshare), old_keyshare, Handle.getCPtr(hnd), hnd));
   }
 
-  public static lib_error dkls_keygen_session_input_message(Handle session, go_slice message, SWIGTYPE_p_int finished) {
-    return lib_error.swigToEnum(godklsJNI.dkls_keygen_session_input_message(Handle.getCPtr(session), session, go_slice.getCPtr(message), message, SWIGTYPE_p_int.getCPtr(finished)));
+  public static lib_error dkls_keygen_session_input_message(Handle session, go_slice message, int[] finished) {
+    return lib_error.swigToEnum(godklsJNI.dkls_keygen_session_input_message(Handle.getCPtr(session), session, go_slice.getCPtr(message), message, finished));
   }
 
   public static lib_error dkls_keygen_session_output_message(Handle session, tss_buffer message) {
@@ -61,8 +61,8 @@ public class godkls {
     return lib_error.swigToEnum(godklsJNI.dkls_key_export_receiver_new(Handle.getCPtr(share), share, go_slice.getCPtr(ids), ids, tss_buffer.getCPtr(setup_msg), setup_msg, Handle.getCPtr(session), session));
   }
 
-  public static lib_error dkls_key_export_receiver_input_message(Handle session, go_slice message, SWIGTYPE_p_int finished) {
-    return lib_error.swigToEnum(godklsJNI.dkls_key_export_receiver_input_message(Handle.getCPtr(session), session, go_slice.getCPtr(message), message, SWIGTYPE_p_int.getCPtr(finished)));
+  public static lib_error dkls_key_export_receiver_input_message(Handle session, go_slice message, int[] finished) {
+    return lib_error.swigToEnum(godklsJNI.dkls_key_export_receiver_input_message(Handle.getCPtr(session), session, go_slice.getCPtr(message), message, finished));
   }
 
   public static lib_error dkls_key_export_receiver_finish(Handle session, tss_buffer secret) {
@@ -129,8 +129,8 @@ public class godkls {
     return lib_error.swigToEnum(godklsJNI.dkls_qc_session_from_setup(go_slice.getCPtr(setup), setup, go_slice.getCPtr(id), id, Handle.getCPtr(keyshare), keyshare, Handle.getCPtr(hnd), hnd));
   }
 
-  public static lib_error dkls_qc_session_input_message(Handle session, go_slice message, SWIGTYPE_p_int finished) {
-    return lib_error.swigToEnum(godklsJNI.dkls_qc_session_input_message(Handle.getCPtr(session), session, go_slice.getCPtr(message), message, SWIGTYPE_p_int.getCPtr(finished)));
+  public static lib_error dkls_qc_session_input_message(Handle session, go_slice message, int[] finished) {
+    return lib_error.swigToEnum(godklsJNI.dkls_qc_session_input_message(Handle.getCPtr(session), session, go_slice.getCPtr(message), message, finished));
   }
 
   public static lib_error dkls_qc_session_output_message(Handle session, tss_buffer message) {
