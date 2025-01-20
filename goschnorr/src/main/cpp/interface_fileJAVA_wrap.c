@@ -1347,6 +1347,192 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schn
 }
 
 
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1qc_1setupmsg_1new(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jlong jarg5, jobject jarg5_, jlong jarg6, jobject jarg6_) {
+  jint jresult = 0 ;
+  struct Handle arg1 ;
+  struct go_slice *arg2 = (struct go_slice *) 0 ;
+  struct go_slice *arg3 = (struct go_slice *) 0 ;
+  uint32_t arg4 ;
+  struct go_slice *arg5 = (struct go_slice *) 0 ;
+  struct tss_buffer *arg6 = (struct tss_buffer *) 0 ;
+  struct Handle *argp1 ;
+  enum lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  (void)jarg3_;
+  (void)jarg5_;
+  (void)jarg6_;
+  argp1 = *(struct Handle **)&jarg1; 
+  if (!argp1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
+    return 0;
+  }
+  arg1 = *argp1; 
+  arg2 = *(struct go_slice **)&jarg2; 
+  arg3 = *(struct go_slice **)&jarg3; 
+  arg4 = (uint32_t)jarg4; 
+  arg5 = *(struct go_slice **)&jarg5; 
+  arg6 = *(struct tss_buffer **)&jarg6; 
+  result = (enum lib_error)schnorr_qc_setupmsg_new(arg1,(struct go_slice const *)arg2,(struct go_slice const *)arg3,arg4,(struct go_slice const *)arg5,arg6);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1qc_1session_1from_1setup(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_) {
+  jint jresult = 0 ;
+  struct go_slice *arg1 = (struct go_slice *) 0 ;
+  struct go_slice *arg2 = (struct go_slice *) 0 ;
+  struct Handle arg3 ;
+  struct Handle *arg4 = (struct Handle *) 0 ;
+  struct Handle *argp3 ;
+  enum lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  (void)jarg3_;
+  (void)jarg4_;
+  arg1 = *(struct go_slice **)&jarg1; 
+  arg2 = *(struct go_slice **)&jarg2; 
+  argp3 = *(struct Handle **)&jarg3; 
+  if (!argp3) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
+    return 0;
+  }
+  arg3 = *argp3; 
+  arg4 = *(struct Handle **)&jarg4; 
+  result = (enum lib_error)schnorr_qc_session_from_setup((struct go_slice const *)arg1,(struct go_slice const *)arg2,arg3,arg4);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1qc_1session_1input_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jintArray jarg3) {
+  jint jresult = 0 ;
+  struct Handle arg1 ;
+  struct go_slice *arg2 = (struct go_slice *) 0 ;
+  int32_t *arg3 = (int32_t *) 0 ;
+  struct Handle *argp1 ;
+  jint *jarr3 ;
+  enum lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  argp1 = *(struct Handle **)&jarg1; 
+  if (!argp1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
+    return 0;
+  }
+  arg1 = *argp1; 
+  arg2 = *(struct go_slice **)&jarg2; 
+  if (!SWIG_JavaArrayInInt(jenv, &jarr3, (int32_t **)&arg3, jarg3)) return 0; 
+  result = (enum lib_error)schnorr_qc_session_input_message(arg1,(struct go_slice const *)arg2,arg3);
+  jresult = (jint)result; 
+  SWIG_JavaArrayArgoutInt(jenv, jarr3, (int32_t *)arg3, jarg3); 
+  free(arg3); 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1qc_1session_1output_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+  jint jresult = 0 ;
+  struct Handle arg1 ;
+  struct tss_buffer *arg2 = (struct tss_buffer *) 0 ;
+  struct Handle *argp1 ;
+  enum lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  argp1 = *(struct Handle **)&jarg1; 
+  if (!argp1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
+    return 0;
+  }
+  arg1 = *argp1; 
+  arg2 = *(struct tss_buffer **)&jarg2; 
+  result = (enum lib_error)schnorr_qc_session_output_message(arg1,arg2);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1qc_1session_1message_1receiver(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jlong jarg4, jobject jarg4_) {
+  jint jresult = 0 ;
+  struct Handle arg1 ;
+  struct go_slice *arg2 = (struct go_slice *) 0 ;
+  uint32_t arg3 ;
+  struct tss_buffer *arg4 = (struct tss_buffer *) 0 ;
+  struct Handle *argp1 ;
+  enum lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  (void)jarg4_;
+  argp1 = *(struct Handle **)&jarg1; 
+  if (!argp1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
+    return 0;
+  }
+  arg1 = *argp1; 
+  arg2 = *(struct go_slice **)&jarg2; 
+  arg3 = (uint32_t)jarg3; 
+  arg4 = *(struct tss_buffer **)&jarg4; 
+  result = (enum lib_error)schnorr_qc_session_message_receiver(arg1,(struct go_slice const *)arg2,arg3,arg4);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1qc_1session_1finish(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+  jint jresult = 0 ;
+  struct Handle arg1 ;
+  struct Handle *arg2 = (struct Handle *) 0 ;
+  struct Handle *argp1 ;
+  enum lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  argp1 = *(struct Handle **)&jarg1; 
+  if (!argp1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
+    return 0;
+  }
+  arg1 = *argp1; 
+  arg2 = *(struct Handle **)&jarg2; 
+  result = (enum lib_error)schnorr_qc_session_finish(arg1,arg2);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1qc_1session_1free(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jint jresult = 0 ;
+  struct Handle *arg1 = (struct Handle *) 0 ;
+  enum lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(struct Handle **)&jarg1; 
+  result = (enum lib_error)schnorr_qc_session_free((struct Handle const *)arg1);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1keyshare_1from_1bytes(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jint jresult = 0 ;
   struct go_slice *arg1 = (struct go_slice *) 0 ;
