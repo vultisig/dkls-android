@@ -45,18 +45,6 @@ public class goschnorr implements goschnorrConstants {
     return lib_error.swigToEnum(goschnorrJNI.schnorr_keygen_session_free(Handle.getCPtr(session), session));
   }
 
-  public static lib_error schnorr_presign_from_bytes(go_slice buf, Handle hnd) {
-    return lib_error.swigToEnum(goschnorrJNI.schnorr_presign_from_bytes(go_slice.getCPtr(buf), buf, Handle.getCPtr(hnd), hnd));
-  }
-
-  public static lib_error schnorr_presign_to_bytes(Handle share, tss_buffer buf) {
-    return lib_error.swigToEnum(goschnorrJNI.schnorr_presign_to_bytes(Handle.getCPtr(share), share, tss_buffer.getCPtr(buf), buf));
-  }
-
-  public static lib_error schnorr_presign_session_id(Handle share, tss_buffer buf) {
-    return lib_error.swigToEnum(goschnorrJNI.schnorr_presign_session_id(Handle.getCPtr(share), share, tss_buffer.getCPtr(buf), buf));
-  }
-
   public static lib_error schnorr_qc_setupmsg_new(Handle keyshare, go_slice ids, go_slice old_parties, long new_threshold, go_slice new_parties, tss_buffer setup_msg) {
     return lib_error.swigToEnum(goschnorrJNI.schnorr_qc_setupmsg_new(Handle.getCPtr(keyshare), keyshare, go_slice.getCPtr(ids), ids, go_slice.getCPtr(old_parties), old_parties, new_threshold, go_slice.getCPtr(new_parties), new_parties, tss_buffer.getCPtr(setup_msg), setup_msg));
   }
@@ -101,6 +89,10 @@ public class goschnorr implements goschnorrConstants {
     return lib_error.swigToEnum(goschnorrJNI.schnorr_keyshare_key_id(Handle.getCPtr(share), share, tss_buffer.getCPtr(buf), buf));
   }
 
+  public static lib_error schnorr_keyshare_chaincode(Handle share, tss_buffer buf) {
+    return lib_error.swigToEnum(goschnorrJNI.schnorr_keyshare_chaincode(Handle.getCPtr(share), share, tss_buffer.getCPtr(buf), buf));
+  }
+
   public static lib_error schnorr_decode_key_id(go_slice setup, tss_buffer key_id) {
     return lib_error.swigToEnum(goschnorrJNI.schnorr_decode_key_id(go_slice.getCPtr(setup), setup, tss_buffer.getCPtr(key_id), key_id));
   }
@@ -121,12 +113,8 @@ public class goschnorr implements goschnorrConstants {
     return lib_error.swigToEnum(goschnorrJNI.schnorr_sign_setupmsg_new(go_slice.getCPtr(key_id), key_id, go_slice.getCPtr(chain_path), chain_path, go_slice.getCPtr(message), message, go_slice.getCPtr(ids), ids, tss_buffer.getCPtr(setup_msg), setup_msg));
   }
 
-  public static lib_error schnorr_finish_setupmsg_new(go_slice session_id, go_slice message, go_slice ids, tss_buffer setup_msg) {
-    return lib_error.swigToEnum(goschnorrJNI.schnorr_finish_setupmsg_new(go_slice.getCPtr(session_id), session_id, go_slice.getCPtr(message), message, go_slice.getCPtr(ids), ids, tss_buffer.getCPtr(setup_msg), setup_msg));
-  }
-
-  public static lib_error schnorr_sign_session_from_setup(go_slice setup, go_slice id, Handle share_or_presign, Handle hnd) {
-    return lib_error.swigToEnum(goschnorrJNI.schnorr_sign_session_from_setup(go_slice.getCPtr(setup), setup, go_slice.getCPtr(id), id, Handle.getCPtr(share_or_presign), share_or_presign, Handle.getCPtr(hnd), hnd));
+  public static lib_error schnorr_sign_session_from_setup(go_slice setup, go_slice id, Handle share, Handle hnd) {
+    return lib_error.swigToEnum(goschnorrJNI.schnorr_sign_session_from_setup(go_slice.getCPtr(setup), setup, go_slice.getCPtr(id), id, Handle.getCPtr(share), share, Handle.getCPtr(hnd), hnd));
   }
 
   public static lib_error schnorr_sign_session_input_message(Handle session, go_slice message, int[] finished) {
