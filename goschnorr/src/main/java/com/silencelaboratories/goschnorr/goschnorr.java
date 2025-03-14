@@ -25,6 +25,10 @@ public class goschnorr implements goschnorrConstants {
     return lib_error.swigToEnum(goschnorrJNI.schnorr_key_refresh_session_from_setup(go_slice.getCPtr(setup), setup, go_slice.getCPtr(id), id, Handle.getCPtr(old_keyshare), old_keyshare, Handle.getCPtr(hnd), hnd));
   }
 
+  public static lib_error schnorr_key_migration_session_from_setup(go_slice setup, go_slice id, go_slice public_key, go_slice root_chain_code, go_slice secret_coefficient, Handle hnd) {
+    return lib_error.swigToEnum(goschnorrJNI.schnorr_key_migration_session_from_setup(go_slice.getCPtr(setup), setup, go_slice.getCPtr(id), id, go_slice.getCPtr(public_key), public_key, go_slice.getCPtr(root_chain_code), root_chain_code, go_slice.getCPtr(secret_coefficient), secret_coefficient, Handle.getCPtr(hnd), hnd));
+  }
+
   public static lib_error schnorr_keygen_session_input_message(Handle session, go_slice message, int[] finished) {
     return lib_error.swigToEnum(goschnorrJNI.schnorr_keygen_session_input_message(Handle.getCPtr(session), session, go_slice.getCPtr(message), message, finished));
   }

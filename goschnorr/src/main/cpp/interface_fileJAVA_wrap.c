@@ -1160,6 +1160,36 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schn
 }
 
 
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1migration_1session_1from_1setup(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_, jlong jarg6, jobject jarg6_) {
+  jint jresult = 0 ;
+  struct go_slice *arg1 = (struct go_slice *) 0 ;
+  struct go_slice *arg2 = (struct go_slice *) 0 ;
+  struct go_slice *arg3 = (struct go_slice *) 0 ;
+  struct go_slice *arg4 = (struct go_slice *) 0 ;
+  struct go_slice *arg5 = (struct go_slice *) 0 ;
+  struct Handle *arg6 = (struct Handle *) 0 ;
+  enum lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  (void)jarg3_;
+  (void)jarg4_;
+  (void)jarg5_;
+  (void)jarg6_;
+  arg1 = *(struct go_slice **)&jarg1; 
+  arg2 = *(struct go_slice **)&jarg2; 
+  arg3 = *(struct go_slice **)&jarg3; 
+  arg4 = *(struct go_slice **)&jarg4; 
+  arg5 = *(struct go_slice **)&jarg5; 
+  arg6 = *(struct Handle **)&jarg6; 
+  result = (enum lib_error)schnorr_key_migration_session_from_setup((struct go_slice const *)arg1,(struct go_slice const *)arg2,(struct go_slice const *)arg3,(struct go_slice const *)arg4,(struct go_slice const *)arg5,arg6);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1keygen_1session_1input_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jintArray jarg3) {
   jint jresult = 0 ;
   struct Handle arg1 ;

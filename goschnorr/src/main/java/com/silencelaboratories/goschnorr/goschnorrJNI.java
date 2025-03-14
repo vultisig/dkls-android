@@ -33,6 +33,7 @@ public class goschnorrJNI {
   public final static native int schnorr_keygen_setupmsg_new(long jarg1, long jarg2, go_slice jarg2_, long jarg3, go_slice jarg3_, long jarg4, tss_buffer jarg4_);
   public final static native int schnorr_keygen_session_from_setup(long jarg1, go_slice jarg1_, long jarg2, go_slice jarg2_, long jarg3, Handle jarg3_);
   public final static native int schnorr_key_refresh_session_from_setup(long jarg1, go_slice jarg1_, long jarg2, go_slice jarg2_, long jarg3, Handle jarg3_, long jarg4, Handle jarg4_);
+  public final static native int schnorr_key_migration_session_from_setup(long jarg1, go_slice jarg1_, long jarg2, go_slice jarg2_, long jarg3, go_slice jarg3_, long jarg4, go_slice jarg4_, long jarg5, go_slice jarg5_, long jarg6, Handle jarg6_);
   public final static native int schnorr_keygen_session_input_message(long jarg1, Handle jarg1_, long jarg2, go_slice jarg2_, int[] jarg3);
   public final static native int schnorr_keygen_session_output_message(long jarg1, Handle jarg1_, long jarg2, tss_buffer jarg2_);
   public final static native int schnorr_keygen_session_message_receiver(long jarg1, Handle jarg1_, long jarg2, go_slice jarg2_, long jarg3, long jarg4, tss_buffer jarg4_);

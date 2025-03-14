@@ -38,6 +38,7 @@ public class godklsJNI {
   public final static native int dkls_keygen_session_message_receiver(long jarg1, Handle jarg1_, long jarg2, go_slice jarg2_, long jarg3, long jarg4, tss_buffer jarg4_);
   public final static native int dkls_keygen_session_finish(long jarg1, Handle jarg1_, long jarg2, Handle jarg2_);
   public final static native int dkls_keygen_session_free(long jarg1, Handle jarg1_);
+  public final static native int dkls_key_migration_session_from_setup(long jarg1, go_slice jarg1_, long jarg2, go_slice jarg2_, long jarg3, go_slice jarg3_, long jarg4, go_slice jarg4_, long jarg5, go_slice jarg5_, long jarg6, Handle jarg6_);
   public final static native int dkls_presign_from_bytes(long jarg1, go_slice jarg1_, long jarg2, Handle jarg2_);
   public final static native int dkls_presign_to_bytes(long jarg1, Handle jarg1_, long jarg2, tss_buffer jarg2_);
   public final static native int dkls_presign_session_id(long jarg1, Handle jarg1_, long jarg2, tss_buffer jarg2_);
