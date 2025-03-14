@@ -45,6 +45,10 @@ public class godkls {
     return lib_error.swigToEnum(godklsJNI.dkls_keygen_session_free(Handle.getCPtr(session), session));
   }
 
+  public static lib_error dkls_key_migration_session_from_setup(go_slice setup, go_slice id, go_slice public_key, go_slice root_chain_code, go_slice secret_coefficient, Handle hnd) {
+    return lib_error.swigToEnum(godklsJNI.dkls_key_migration_session_from_setup(go_slice.getCPtr(setup), setup, go_slice.getCPtr(id), id, go_slice.getCPtr(public_key), public_key, go_slice.getCPtr(root_chain_code), root_chain_code, go_slice.getCPtr(secret_coefficient), secret_coefficient, Handle.getCPtr(hnd), hnd));
+  }
+
   public static lib_error dkls_presign_from_bytes(go_slice buf, Handle hnd) {
     return lib_error.swigToEnum(godklsJNI.dkls_presign_from_bytes(go_slice.getCPtr(buf), buf, Handle.getCPtr(hnd), hnd));
   }
