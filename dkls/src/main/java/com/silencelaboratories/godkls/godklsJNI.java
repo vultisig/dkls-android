@@ -46,7 +46,7 @@ public class godklsJNI {
   public final static native int dkls_key_export_receiver_input_message(long jarg1, Handle jarg1_, long jarg2, go_slice jarg2_, int[] jarg3);
   public final static native int dkls_key_export_receiver_finish(long jarg1, Handle jarg1_, long jarg2, tss_buffer jarg2_);
   public final static native int dkls_key_exporter(long jarg1, Handle jarg1_, long jarg2, go_slice jarg2_, long jarg3, go_slice jarg3_, long jarg4, tss_buffer jarg4_, long jarg5, tss_buffer jarg5_);
-  public final static native int dkls_key_import_initiator_new(long jarg1, go_slice jarg1_, short jarg2, long jarg3, go_slice jarg3_, long jarg4, tss_buffer jarg4_, long jarg5, Handle jarg5_);
+  public final static native int dkls_key_import_initiator_new(long jarg1, go_slice jarg1_, long jarg2, go_slice jarg2_, short jarg3, long jarg4, go_slice jarg4_, long jarg5, tss_buffer jarg5_, long jarg6, Handle jarg6_);
   public final static native int dkls_key_importer_new(long jarg1, go_slice jarg1_, long jarg2, go_slice jarg2_, long jarg3, Handle jarg3_);
   public final static native int dkls_keyshare_from_bytes(long jarg1, go_slice jarg1_, long jarg2, Handle jarg2_);
   public final static native int dkls_keyshare_to_bytes(long jarg1, Handle jarg1_, long jarg2, tss_buffer jarg2_);
