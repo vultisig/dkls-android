@@ -1493,27 +1493,30 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1key_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1key_1import_1initiator_1new(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jshort jarg2, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1key_1import_1initiator_1new(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jshort jarg3, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_, jlong jarg6, jobject jarg6_) {
   jint jresult = 0 ;
   struct go_slice *arg1 = (struct go_slice *) 0 ;
-  uint8_t arg2 ;
-  struct go_slice *arg3 = (struct go_slice *) 0 ;
-  struct tss_buffer *arg4 = (struct tss_buffer *) 0 ;
-  struct Handle *arg5 = (struct Handle *) 0 ;
+  struct go_slice *arg2 = (struct go_slice *) 0 ;
+  uint8_t arg3 ;
+  struct go_slice *arg4 = (struct go_slice *) 0 ;
+  struct tss_buffer *arg5 = (struct tss_buffer *) 0 ;
+  struct Handle *arg6 = (struct Handle *) 0 ;
   enum lib_error result;
   
   (void)jenv;
   (void)jcls;
   (void)jarg1_;
-  (void)jarg3_;
+  (void)jarg2_;
   (void)jarg4_;
   (void)jarg5_;
+  (void)jarg6_;
   arg1 = *(struct go_slice **)&jarg1; 
-  arg2 = (uint8_t)jarg2; 
-  arg3 = *(struct go_slice **)&jarg3; 
-  arg4 = *(struct tss_buffer **)&jarg4; 
-  arg5 = *(struct Handle **)&jarg5; 
-  result = (enum lib_error)dkls_key_import_initiator_new((struct go_slice const *)arg1,arg2,(struct go_slice const *)arg3,arg4,arg5);
+  arg2 = *(struct go_slice **)&jarg2; 
+  arg3 = (uint8_t)jarg3; 
+  arg4 = *(struct go_slice **)&jarg4; 
+  arg5 = *(struct tss_buffer **)&jarg5; 
+  arg6 = *(struct Handle **)&jarg6; 
+  result = (enum lib_error)dkls_key_import_initiator_new((struct go_slice const *)arg1,(struct go_slice const *)arg2,arg3,(struct go_slice const *)arg4,arg5,arg6);
   jresult = (jint)result; 
   return jresult;
 }

@@ -77,8 +77,8 @@ public class godkls {
     return lib_error.swigToEnum(godklsJNI.dkls_key_exporter(Handle.getCPtr(share), share, go_slice.getCPtr(id), id, go_slice.getCPtr(setup), setup, tss_buffer.getCPtr(message), message, tss_buffer.getCPtr(receiver), receiver));
   }
 
-  public static lib_error dkls_key_import_initiator_new(go_slice private_key, short threshold, go_slice ids, tss_buffer setup_msg, Handle session) {
-    return lib_error.swigToEnum(godklsJNI.dkls_key_import_initiator_new(go_slice.getCPtr(private_key), private_key, threshold, go_slice.getCPtr(ids), ids, tss_buffer.getCPtr(setup_msg), setup_msg, Handle.getCPtr(session), session));
+  public static lib_error dkls_key_import_initiator_new(go_slice private_key, go_slice root_chain, short threshold, go_slice ids, tss_buffer setup_msg, Handle session) {
+    return lib_error.swigToEnum(godklsJNI.dkls_key_import_initiator_new(go_slice.getCPtr(private_key), private_key, go_slice.getCPtr(root_chain), root_chain, threshold, go_slice.getCPtr(ids), ids, tss_buffer.getCPtr(setup_msg), setup_msg, Handle.getCPtr(session), session));
   }
 
   public static lib_error dkls_key_importer_new(go_slice setup, go_slice id, Handle session) {
