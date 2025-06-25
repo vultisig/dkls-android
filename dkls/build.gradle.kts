@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    ndkVersion = "28.0.12674087-beta2"
     namespace = "com.vultisig.dklsandroid"
     compileSdk = 34
 
