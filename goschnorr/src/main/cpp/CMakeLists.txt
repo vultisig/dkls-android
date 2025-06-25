@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.6.0)
 
 project("goschnorr")
-
+add_link_options(-Wl,-z,max-page-size=16384)
 # Define the path to place generated Java sources
 set(JAVA_MODULE_PATH com/silencelaboratories/goschnorr)
 set(GENERATED_SOURCES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../java/${JAVA_MODULE_PATH})
