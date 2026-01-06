@@ -8,9 +8,33 @@
 
 package com.silencelaboratories.goschnorr;
 
-public class goschnorr implements goschnorrConstants {
+public class goschnorr {
   public static void tss_buffer_free(tss_buffer buf) {
     goschnorrJNI.tss_buffer_free(tss_buffer.getCPtr(buf), buf);
+  }
+
+  public static schnorr_lib_error schnorr_key_export_receiver_new(Handle share, go_slice ids, tss_buffer setup_msg, Handle session) {
+    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_key_export_receiver_new(Handle.getCPtr(share), share, go_slice.getCPtr(ids), ids, tss_buffer.getCPtr(setup_msg), setup_msg, Handle.getCPtr(session), session));
+  }
+
+  public static schnorr_lib_error schnorr_key_export_receiver_input_message(Handle session, go_slice message, int[] finished) {
+    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_key_export_receiver_input_message(Handle.getCPtr(session), session, go_slice.getCPtr(message), message, finished));
+  }
+
+  public static schnorr_lib_error schnorr_key_export_receiver_finish(Handle session, tss_buffer secret) {
+    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_key_export_receiver_finish(Handle.getCPtr(session), session, tss_buffer.getCPtr(secret), secret));
+  }
+
+  public static schnorr_lib_error schnorr_key_exporter(Handle share, go_slice id, go_slice setup, tss_buffer message, tss_buffer receiver) {
+    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_key_exporter(Handle.getCPtr(share), share, go_slice.getCPtr(id), id, go_slice.getCPtr(setup), setup, tss_buffer.getCPtr(message), message, tss_buffer.getCPtr(receiver), receiver));
+  }
+
+  public static schnorr_lib_error schnorr_key_import_initiator_new(go_slice private_key, go_slice root_chain, short threshold, go_slice ids, tss_buffer setup_msg, Handle session) {
+    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_key_import_initiator_new(go_slice.getCPtr(private_key), private_key, go_slice.getCPtr(root_chain), root_chain, threshold, go_slice.getCPtr(ids), ids, tss_buffer.getCPtr(setup_msg), setup_msg, Handle.getCPtr(session), session));
+  }
+
+  public static schnorr_lib_error schnorr_key_importer_new(go_slice setup, go_slice id, Handle session) {
+    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_key_importer_new(go_slice.getCPtr(setup), setup, go_slice.getCPtr(id), id, Handle.getCPtr(session), session));
   }
 
   public static schnorr_lib_error schnorr_keygen_setupmsg_new(long threshold, go_slice key_id, go_slice ids, tss_buffer setup_msg) {
@@ -49,6 +73,26 @@ public class goschnorr implements goschnorrConstants {
     return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_keygen_session_free(Handle.getCPtr(session), session));
   }
 
+  public static schnorr_lib_error schnorr_keyshare_from_bytes(go_slice buf, Handle hnd) {
+    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_keyshare_from_bytes(go_slice.getCPtr(buf), buf, Handle.getCPtr(hnd), hnd));
+  }
+
+  public static schnorr_lib_error schnorr_keyshare_to_bytes(Handle share, tss_buffer buf) {
+    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_keyshare_to_bytes(Handle.getCPtr(share), share, tss_buffer.getCPtr(buf), buf));
+  }
+
+  public static schnorr_lib_error schnorr_keyshare_public_key(Handle share, tss_buffer buf) {
+    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_keyshare_public_key(Handle.getCPtr(share), share, tss_buffer.getCPtr(buf), buf));
+  }
+
+  public static schnorr_lib_error schnorr_keyshare_key_id(Handle share, tss_buffer buf) {
+    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_keyshare_key_id(Handle.getCPtr(share), share, tss_buffer.getCPtr(buf), buf));
+  }
+
+  public static schnorr_lib_error schnorr_keyshare_chaincode(Handle share, tss_buffer buf) {
+    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_keyshare_chaincode(Handle.getCPtr(share), share, tss_buffer.getCPtr(buf), buf));
+  }
+
   public static schnorr_lib_error schnorr_qc_setupmsg_new(Handle keyshare, go_slice ids, go_slice old_parties, long new_threshold, go_slice new_parties, tss_buffer setup_msg) {
     return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_qc_setupmsg_new(Handle.getCPtr(keyshare), keyshare, go_slice.getCPtr(ids), ids, go_slice.getCPtr(old_parties), old_parties, new_threshold, go_slice.getCPtr(new_parties), new_parties, tss_buffer.getCPtr(setup_msg), setup_msg));
   }
@@ -75,26 +119,6 @@ public class goschnorr implements goschnorrConstants {
 
   public static schnorr_lib_error schnorr_qc_session_free(Handle session) {
     return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_qc_session_free(Handle.getCPtr(session), session));
-  }
-
-  public static schnorr_lib_error schnorr_keyshare_from_bytes(go_slice buf, Handle hnd) {
-    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_keyshare_from_bytes(go_slice.getCPtr(buf), buf, Handle.getCPtr(hnd), hnd));
-  }
-
-  public static schnorr_lib_error schnorr_keyshare_to_bytes(Handle share, tss_buffer buf) {
-    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_keyshare_to_bytes(Handle.getCPtr(share), share, tss_buffer.getCPtr(buf), buf));
-  }
-
-  public static schnorr_lib_error schnorr_keyshare_public_key(Handle share, tss_buffer buf) {
-    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_keyshare_public_key(Handle.getCPtr(share), share, tss_buffer.getCPtr(buf), buf));
-  }
-
-  public static schnorr_lib_error schnorr_keyshare_key_id(Handle share, tss_buffer buf) {
-    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_keyshare_key_id(Handle.getCPtr(share), share, tss_buffer.getCPtr(buf), buf));
-  }
-
-  public static schnorr_lib_error schnorr_keyshare_chaincode(Handle share, tss_buffer buf) {
-    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_keyshare_chaincode(Handle.getCPtr(share), share, tss_buffer.getCPtr(buf), buf));
   }
 
   public static schnorr_lib_error schnorr_decode_key_id(go_slice setup, tss_buffer key_id) {
@@ -139,30 +163,6 @@ public class goschnorr implements goschnorrConstants {
 
   public static schnorr_lib_error schnorr_sign_session_free(Handle session) {
     return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_sign_session_free(Handle.getCPtr(session), session));
-  }
-
-  public static schnorr_lib_error schnorr_key_export_receiver_new(Handle share, go_slice ids, tss_buffer setup_msg, Handle session) {
-    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_key_export_receiver_new(Handle.getCPtr(share), share, go_slice.getCPtr(ids), ids, tss_buffer.getCPtr(setup_msg), setup_msg, Handle.getCPtr(session), session));
-  }
-
-  public static schnorr_lib_error schnorr_key_export_receiver_input_message(Handle session, go_slice message, int[] finished) {
-    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_key_export_receiver_input_message(Handle.getCPtr(session), session, go_slice.getCPtr(message), message, finished));
-  }
-
-  public static schnorr_lib_error schnorr_key_export_receiver_finish(Handle session, tss_buffer secret) {
-    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_key_export_receiver_finish(Handle.getCPtr(session), session, tss_buffer.getCPtr(secret), secret));
-  }
-
-  public static schnorr_lib_error schnorr_key_exporter(Handle share, go_slice id, go_slice setup, tss_buffer message, tss_buffer receiver) {
-    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_key_exporter(Handle.getCPtr(share), share, go_slice.getCPtr(id), id, go_slice.getCPtr(setup), setup, tss_buffer.getCPtr(message), message, tss_buffer.getCPtr(receiver), receiver));
-  }
-
-  public static schnorr_lib_error schnorr_key_import_initiator_new(go_slice private_key, go_slice root_chain, short threshold, go_slice ids, tss_buffer setup_msg, Handle session) {
-    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_key_import_initiator_new(go_slice.getCPtr(private_key), private_key, go_slice.getCPtr(root_chain), root_chain, threshold, go_slice.getCPtr(ids), ids, tss_buffer.getCPtr(setup_msg), setup_msg, Handle.getCPtr(session), session));
-  }
-
-  public static schnorr_lib_error schnorr_key_importer_new(go_slice setup, go_slice id, Handle session) {
-    return schnorr_lib_error.swigToEnum(goschnorrJNI.schnorr_key_importer_new(go_slice.getCPtr(setup), setup, go_slice.getCPtr(id), id, Handle.getCPtr(session), session));
   }
 
 }

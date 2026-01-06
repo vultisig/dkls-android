@@ -817,18 +817,6 @@ static jdoubleArray SWIG_JavaArrayOutDouble (JNIEnv *jenv, double *result, jsize
 extern "C" {
 #endif
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_DEFAULT_1TTL_1get(JNIEnv *jenv, jclass jcls) {
-  jint jresult = 0 ;
-  int result;
-  
-  (void)jenv;
-  (void)jcls;
-  result = (int)((60*10));
-  jresult = (jint)result; 
-  return jresult;
-}
-
-
 SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_LIB_1ABORT_1PROTOCOL_1PARTY_11_1get(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   enum schnorr_lib_error result;
@@ -915,6 +903,56 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_dele
   (void)jenv;
   (void)jcls;
   arg1 = *(struct tss_buffer **)&jarg1; 
+  free((char *) arg1);
+}
+
+
+SWIGEXPORT void JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_Handle_1_10_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+  struct Handle *arg1 = 0 ;
+  int32_t arg2 ;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(struct Handle **)&jarg1; 
+  arg2 = (int32_t)jarg2; 
+  if (arg1) (arg1)->_0 = arg2;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_Handle_1_10_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+  jint jresult = 0 ;
+  struct Handle *arg1 = 0 ;
+  int32_t result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  arg1 = *(struct Handle **)&jarg1; 
+  result = (int32_t) ((arg1)->_0);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_new_1Handle(JNIEnv *jenv, jclass jcls) {
+  jlong jresult = 0 ;
+  struct Handle *result = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  result = (struct Handle *)calloc(1, sizeof(struct Handle));
+  *(struct Handle **)&jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_delete_1Handle(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+  struct Handle *arg1 = 0 ;
+  
+  (void)jenv;
+  (void)jcls;
+  arg1 = *(struct Handle **)&jarg1; 
   free((char *) arg1);
 }
 
@@ -1025,56 +1063,6 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_dele
 }
 
 
-SWIGEXPORT void JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_Handle_1_10_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
-  struct Handle *arg1 = 0 ;
-  int32_t arg2 ;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(struct Handle **)&jarg1; 
-  arg2 = (int32_t)jarg2; 
-  if (arg1) (arg1)->_0 = arg2;
-}
-
-
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_Handle_1_10_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
-  jint jresult = 0 ;
-  struct Handle *arg1 = 0 ;
-  int32_t result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  arg1 = *(struct Handle **)&jarg1; 
-  result = (int32_t) ((arg1)->_0);
-  jresult = (jint)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_new_1Handle(JNIEnv *jenv, jclass jcls) {
-  jlong jresult = 0 ;
-  struct Handle *result = 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  result = (struct Handle *)calloc(1, sizeof(struct Handle));
-  *(struct Handle **)&jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_delete_1Handle(JNIEnv *jenv, jclass jcls, jlong jarg1) {
-  struct Handle *arg1 = 0 ;
-  
-  (void)jenv;
-  (void)jcls;
-  arg1 = *(struct Handle **)&jarg1; 
-  free((char *) arg1);
-}
-
-
 SWIGEXPORT void JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_tss_1buffer_1free(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   struct tss_buffer *arg1 = 0 ;
   
@@ -1083,6 +1071,172 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_tss_
   (void)jarg1_;
   arg1 = *(struct tss_buffer **)&jarg1; 
   tss_buffer_free(arg1);
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1export_1receiver_1new(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_) {
+  jint jresult = 0 ;
+  struct Handle arg1 ;
+  struct go_slice *arg2 = 0 ;
+  struct tss_buffer *arg3 = 0 ;
+  struct Handle *arg4 = 0 ;
+  struct Handle *argp1 ;
+  enum schnorr_lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  (void)jarg3_;
+  (void)jarg4_;
+  argp1 = *(struct Handle **)&jarg1; 
+  if (!argp1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
+    return 0;
+  }
+  arg1 = *argp1; 
+  arg2 = *(struct go_slice **)&jarg2; 
+  arg3 = *(struct tss_buffer **)&jarg3; 
+  arg4 = *(struct Handle **)&jarg4; 
+  result = (enum schnorr_lib_error)schnorr_key_export_receiver_new(arg1,(struct go_slice const *)arg2,arg3,arg4);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1export_1receiver_1input_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jintArray jarg3) {
+  jint jresult = 0 ;
+  struct Handle arg1 ;
+  struct go_slice *arg2 = 0 ;
+  int32_t *arg3 = 0 ;
+  struct Handle *argp1 ;
+  jint *jarr3 ;
+  enum schnorr_lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  argp1 = *(struct Handle **)&jarg1; 
+  if (!argp1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
+    return 0;
+  }
+  arg1 = *argp1; 
+  arg2 = *(struct go_slice **)&jarg2; 
+  if (!SWIG_JavaArrayInInt(jenv, &jarr3, (int32_t **)&arg3, jarg3)) return 0; 
+  result = (enum schnorr_lib_error)schnorr_key_export_receiver_input_message(arg1,(struct go_slice const *)arg2,arg3);
+  jresult = (jint)result; 
+  SWIG_JavaArrayArgoutInt(jenv, jarr3, (int32_t *)arg3, jarg3); 
+  free(arg3); 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1export_1receiver_1finish(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+  jint jresult = 0 ;
+  struct Handle arg1 ;
+  struct tss_buffer *arg2 = 0 ;
+  struct Handle *argp1 ;
+  enum schnorr_lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  argp1 = *(struct Handle **)&jarg1; 
+  if (!argp1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
+    return 0;
+  }
+  arg1 = *argp1; 
+  arg2 = *(struct tss_buffer **)&jarg2; 
+  result = (enum schnorr_lib_error)schnorr_key_export_receiver_finish(arg1,arg2);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1exporter(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_) {
+  jint jresult = 0 ;
+  struct Handle arg1 ;
+  struct go_slice *arg2 = 0 ;
+  struct go_slice *arg3 = 0 ;
+  struct tss_buffer *arg4 = 0 ;
+  struct tss_buffer *arg5 = 0 ;
+  struct Handle *argp1 ;
+  enum schnorr_lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  (void)jarg3_;
+  (void)jarg4_;
+  (void)jarg5_;
+  argp1 = *(struct Handle **)&jarg1; 
+  if (!argp1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
+    return 0;
+  }
+  arg1 = *argp1; 
+  arg2 = *(struct go_slice **)&jarg2; 
+  arg3 = *(struct go_slice **)&jarg3; 
+  arg4 = *(struct tss_buffer **)&jarg4; 
+  arg5 = *(struct tss_buffer **)&jarg5; 
+  result = (enum schnorr_lib_error)schnorr_key_exporter(arg1,(struct go_slice const *)arg2,(struct go_slice const *)arg3,arg4,arg5);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1import_1initiator_1new(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jshort jarg3, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_, jlong jarg6, jobject jarg6_) {
+  jint jresult = 0 ;
+  struct go_slice *arg1 = 0 ;
+  struct go_slice *arg2 = 0 ;
+  uint8_t arg3 ;
+  struct go_slice *arg4 = 0 ;
+  struct tss_buffer *arg5 = 0 ;
+  struct Handle *arg6 = 0 ;
+  enum schnorr_lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  (void)jarg4_;
+  (void)jarg5_;
+  (void)jarg6_;
+  arg1 = *(struct go_slice **)&jarg1; 
+  arg2 = *(struct go_slice **)&jarg2; 
+  arg3 = (uint8_t)jarg3; 
+  arg4 = *(struct go_slice **)&jarg4; 
+  arg5 = *(struct tss_buffer **)&jarg5; 
+  arg6 = *(struct Handle **)&jarg6; 
+  result = (enum schnorr_lib_error)schnorr_key_import_initiator_new((struct go_slice const *)arg1,(struct go_slice const *)arg2,arg3,(struct go_slice const *)arg4,arg5,arg6);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1importer_1new(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_) {
+  jint jresult = 0 ;
+  struct go_slice *arg1 = 0 ;
+  struct go_slice *arg2 = 0 ;
+  struct Handle *arg3 = 0 ;
+  enum schnorr_lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  (void)jarg3_;
+  arg1 = *(struct go_slice **)&jarg1; 
+  arg2 = *(struct go_slice **)&jarg2; 
+  arg3 = *(struct Handle **)&jarg3; 
+  result = (enum schnorr_lib_error)schnorr_key_importer_new((struct go_slice const *)arg1,(struct go_slice const *)arg2,arg3);
+  jresult = (jint)result; 
+  return jresult;
 }
 
 
@@ -1311,6 +1465,120 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schn
 }
 
 
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1keyshare_1from_1bytes(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+  jint jresult = 0 ;
+  struct go_slice *arg1 = 0 ;
+  struct Handle *arg2 = 0 ;
+  enum schnorr_lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  arg1 = *(struct go_slice **)&jarg1; 
+  arg2 = *(struct Handle **)&jarg2; 
+  result = (enum schnorr_lib_error)schnorr_keyshare_from_bytes((struct go_slice const *)arg1,arg2);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1keyshare_1to_1bytes(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+  jint jresult = 0 ;
+  struct Handle arg1 ;
+  struct tss_buffer *arg2 = 0 ;
+  struct Handle *argp1 ;
+  enum schnorr_lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  argp1 = *(struct Handle **)&jarg1; 
+  if (!argp1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
+    return 0;
+  }
+  arg1 = *argp1; 
+  arg2 = *(struct tss_buffer **)&jarg2; 
+  result = (enum schnorr_lib_error)schnorr_keyshare_to_bytes(arg1,arg2);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1keyshare_1public_1key(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+  jint jresult = 0 ;
+  struct Handle arg1 ;
+  struct tss_buffer *arg2 = 0 ;
+  struct Handle *argp1 ;
+  enum schnorr_lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  argp1 = *(struct Handle **)&jarg1; 
+  if (!argp1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
+    return 0;
+  }
+  arg1 = *argp1; 
+  arg2 = *(struct tss_buffer **)&jarg2; 
+  result = (enum schnorr_lib_error)schnorr_keyshare_public_key(arg1,arg2);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1keyshare_1key_1id(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+  jint jresult = 0 ;
+  struct Handle arg1 ;
+  struct tss_buffer *arg2 = 0 ;
+  struct Handle *argp1 ;
+  enum schnorr_lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  argp1 = *(struct Handle **)&jarg1; 
+  if (!argp1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
+    return 0;
+  }
+  arg1 = *argp1; 
+  arg2 = *(struct tss_buffer **)&jarg2; 
+  result = (enum schnorr_lib_error)schnorr_keyshare_key_id(arg1,arg2);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1keyshare_1chaincode(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+  jint jresult = 0 ;
+  struct Handle arg1 ;
+  struct tss_buffer *arg2 = 0 ;
+  struct Handle *argp1 ;
+  enum schnorr_lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  argp1 = *(struct Handle **)&jarg1; 
+  if (!argp1) {
+    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
+    return 0;
+  }
+  arg1 = *argp1; 
+  arg2 = *(struct tss_buffer **)&jarg2; 
+  result = (enum schnorr_lib_error)schnorr_keyshare_chaincode(arg1,arg2);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1qc_1setupmsg_1new(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jlong jarg5, jobject jarg5_, jlong jarg6, jobject jarg6_) {
   jint jresult = 0 ;
   struct Handle arg1 ;
@@ -1492,120 +1760,6 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schn
   (void)jarg1_;
   arg1 = *(struct Handle **)&jarg1; 
   result = (enum schnorr_lib_error)schnorr_qc_session_free((struct Handle const *)arg1);
-  jresult = (jint)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1keyshare_1from_1bytes(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
-  jint jresult = 0 ;
-  struct go_slice *arg1 = 0 ;
-  struct Handle *arg2 = 0 ;
-  enum schnorr_lib_error result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  (void)jarg2_;
-  arg1 = *(struct go_slice **)&jarg1; 
-  arg2 = *(struct Handle **)&jarg2; 
-  result = (enum schnorr_lib_error)schnorr_keyshare_from_bytes((struct go_slice const *)arg1,arg2);
-  jresult = (jint)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1keyshare_1to_1bytes(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
-  jint jresult = 0 ;
-  struct Handle arg1 ;
-  struct tss_buffer *arg2 = 0 ;
-  struct Handle *argp1 ;
-  enum schnorr_lib_error result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  (void)jarg2_;
-  argp1 = *(struct Handle **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
-    return 0;
-  }
-  arg1 = *argp1; 
-  arg2 = *(struct tss_buffer **)&jarg2; 
-  result = (enum schnorr_lib_error)schnorr_keyshare_to_bytes(arg1,arg2);
-  jresult = (jint)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1keyshare_1public_1key(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
-  jint jresult = 0 ;
-  struct Handle arg1 ;
-  struct tss_buffer *arg2 = 0 ;
-  struct Handle *argp1 ;
-  enum schnorr_lib_error result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  (void)jarg2_;
-  argp1 = *(struct Handle **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
-    return 0;
-  }
-  arg1 = *argp1; 
-  arg2 = *(struct tss_buffer **)&jarg2; 
-  result = (enum schnorr_lib_error)schnorr_keyshare_public_key(arg1,arg2);
-  jresult = (jint)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1keyshare_1key_1id(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
-  jint jresult = 0 ;
-  struct Handle arg1 ;
-  struct tss_buffer *arg2 = 0 ;
-  struct Handle *argp1 ;
-  enum schnorr_lib_error result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  (void)jarg2_;
-  argp1 = *(struct Handle **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
-    return 0;
-  }
-  arg1 = *argp1; 
-  arg2 = *(struct tss_buffer **)&jarg2; 
-  result = (enum schnorr_lib_error)schnorr_keyshare_key_id(arg1,arg2);
-  jresult = (jint)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1keyshare_1chaincode(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
-  jint jresult = 0 ;
-  struct Handle arg1 ;
-  struct tss_buffer *arg2 = 0 ;
-  struct Handle *argp1 ;
-  enum schnorr_lib_error result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  (void)jarg2_;
-  argp1 = *(struct Handle **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
-    return 0;
-  }
-  arg1 = *argp1; 
-  arg2 = *(struct tss_buffer **)&jarg2; 
-  result = (enum schnorr_lib_error)schnorr_keyshare_chaincode(arg1,arg2);
   jresult = (jint)result; 
   return jresult;
 }
@@ -1858,172 +2012,6 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schn
   (void)jarg1_;
   arg1 = *(struct Handle **)&jarg1; 
   result = (enum schnorr_lib_error)schnorr_sign_session_free((struct Handle const *)arg1);
-  jresult = (jint)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1export_1receiver_1new(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_) {
-  jint jresult = 0 ;
-  struct Handle arg1 ;
-  struct go_slice *arg2 = 0 ;
-  struct tss_buffer *arg3 = 0 ;
-  struct Handle *arg4 = 0 ;
-  struct Handle *argp1 ;
-  enum schnorr_lib_error result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  (void)jarg2_;
-  (void)jarg3_;
-  (void)jarg4_;
-  argp1 = *(struct Handle **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
-    return 0;
-  }
-  arg1 = *argp1; 
-  arg2 = *(struct go_slice **)&jarg2; 
-  arg3 = *(struct tss_buffer **)&jarg3; 
-  arg4 = *(struct Handle **)&jarg4; 
-  result = (enum schnorr_lib_error)schnorr_key_export_receiver_new(arg1,(struct go_slice const *)arg2,arg3,arg4);
-  jresult = (jint)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1export_1receiver_1input_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jintArray jarg3) {
-  jint jresult = 0 ;
-  struct Handle arg1 ;
-  struct go_slice *arg2 = 0 ;
-  int32_t *arg3 = 0 ;
-  struct Handle *argp1 ;
-  jint *jarr3 ;
-  enum schnorr_lib_error result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  (void)jarg2_;
-  argp1 = *(struct Handle **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
-    return 0;
-  }
-  arg1 = *argp1; 
-  arg2 = *(struct go_slice **)&jarg2; 
-  if (!SWIG_JavaArrayInInt(jenv, &jarr3, (int32_t **)&arg3, jarg3)) return 0; 
-  result = (enum schnorr_lib_error)schnorr_key_export_receiver_input_message(arg1,(struct go_slice const *)arg2,arg3);
-  jresult = (jint)result; 
-  SWIG_JavaArrayArgoutInt(jenv, jarr3, (int32_t *)arg3, jarg3); 
-  free(arg3); 
-  return jresult;
-}
-
-
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1export_1receiver_1finish(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
-  jint jresult = 0 ;
-  struct Handle arg1 ;
-  struct tss_buffer *arg2 = 0 ;
-  struct Handle *argp1 ;
-  enum schnorr_lib_error result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  (void)jarg2_;
-  argp1 = *(struct Handle **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
-    return 0;
-  }
-  arg1 = *argp1; 
-  arg2 = *(struct tss_buffer **)&jarg2; 
-  result = (enum schnorr_lib_error)schnorr_key_export_receiver_finish(arg1,arg2);
-  jresult = (jint)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1exporter(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_) {
-  jint jresult = 0 ;
-  struct Handle arg1 ;
-  struct go_slice *arg2 = 0 ;
-  struct go_slice *arg3 = 0 ;
-  struct tss_buffer *arg4 = 0 ;
-  struct tss_buffer *arg5 = 0 ;
-  struct Handle *argp1 ;
-  enum schnorr_lib_error result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  (void)jarg2_;
-  (void)jarg3_;
-  (void)jarg4_;
-  (void)jarg5_;
-  argp1 = *(struct Handle **)&jarg1; 
-  if (!argp1) {
-    SWIG_JavaThrowException(jenv, SWIG_JavaNullPointerException, "Attempt to dereference null struct Handle");
-    return 0;
-  }
-  arg1 = *argp1; 
-  arg2 = *(struct go_slice **)&jarg2; 
-  arg3 = *(struct go_slice **)&jarg3; 
-  arg4 = *(struct tss_buffer **)&jarg4; 
-  arg5 = *(struct tss_buffer **)&jarg5; 
-  result = (enum schnorr_lib_error)schnorr_key_exporter(arg1,(struct go_slice const *)arg2,(struct go_slice const *)arg3,arg4,arg5);
-  jresult = (jint)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1import_1initiator_1new(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jshort jarg3, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_, jlong jarg6, jobject jarg6_) {
-  jint jresult = 0 ;
-  struct go_slice *arg1 = 0 ;
-  struct go_slice *arg2 = 0 ;
-  uint8_t arg3 ;
-  struct go_slice *arg4 = 0 ;
-  struct tss_buffer *arg5 = 0 ;
-  struct Handle *arg6 = 0 ;
-  enum schnorr_lib_error result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  (void)jarg2_;
-  (void)jarg4_;
-  (void)jarg5_;
-  (void)jarg6_;
-  arg1 = *(struct go_slice **)&jarg1; 
-  arg2 = *(struct go_slice **)&jarg2; 
-  arg3 = (uint8_t)jarg3; 
-  arg4 = *(struct go_slice **)&jarg4; 
-  arg5 = *(struct tss_buffer **)&jarg5; 
-  arg6 = *(struct Handle **)&jarg6; 
-  result = (enum schnorr_lib_error)schnorr_key_import_initiator_new((struct go_slice const *)arg1,(struct go_slice const *)arg2,arg3,(struct go_slice const *)arg4,arg5,arg6);
-  jresult = (jint)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_goschnorr_goschnorrJNI_schnorr_1key_1importer_1new(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_) {
-  jint jresult = 0 ;
-  struct go_slice *arg1 = 0 ;
-  struct go_slice *arg2 = 0 ;
-  struct Handle *arg3 = 0 ;
-  enum schnorr_lib_error result;
-  
-  (void)jenv;
-  (void)jcls;
-  (void)jarg1_;
-  (void)jarg2_;
-  (void)jarg3_;
-  arg1 = *(struct go_slice **)&jarg1; 
-  arg2 = *(struct go_slice **)&jarg2; 
-  arg3 = *(struct Handle **)&jarg3; 
-  result = (enum schnorr_lib_error)schnorr_key_importer_new((struct go_slice const *)arg1,(struct go_slice const *)arg2,arg3);
   jresult = (jint)result; 
   return jresult;
 }
