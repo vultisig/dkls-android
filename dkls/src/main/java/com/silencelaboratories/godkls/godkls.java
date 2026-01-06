@@ -17,6 +17,10 @@ public class godkls {
     return lib_error.swigToEnum(godklsJNI.dkls_keygen_setupmsg_new(threshold, go_slice.getCPtr(key_id), key_id, go_slice.getCPtr(ids), ids, tss_buffer.getCPtr(setup_msg), setup_msg));
   }
 
+  public static lib_error dkls_keygen_setupmsg_new_with_rank(long threshold, go_slice key_id, go_slice ids, go_slice ranks, tss_buffer setup_msg) {
+    return lib_error.swigToEnum(godklsJNI.dkls_keygen_setupmsg_new_with_rank(threshold, go_slice.getCPtr(key_id), key_id, go_slice.getCPtr(ids), ids, go_slice.getCPtr(ranks), ranks, tss_buffer.getCPtr(setup_msg), setup_msg));
+  }
+
   public static lib_error dkls_keygen_session_from_setup(go_slice setup, go_slice id, Handle hnd) {
     return lib_error.swigToEnum(godklsJNI.dkls_keygen_session_from_setup(go_slice.getCPtr(setup), setup, go_slice.getCPtr(id), id, Handle.getCPtr(hnd), hnd));
   }
@@ -155,6 +159,10 @@ public class godkls {
 
   public static lib_error dkls_qc_setupmsg_new(Handle keyshare, go_slice ids, go_slice old_parties, long new_threshold, go_slice new_parties, tss_buffer setup_msg) {
     return lib_error.swigToEnum(godklsJNI.dkls_qc_setupmsg_new(Handle.getCPtr(keyshare), keyshare, go_slice.getCPtr(ids), ids, go_slice.getCPtr(old_parties), old_parties, new_threshold, go_slice.getCPtr(new_parties), new_parties, tss_buffer.getCPtr(setup_msg), setup_msg));
+  }
+
+  public static lib_error dkls_qc_setupmsg_from_key_id(go_slice key_id, go_slice pk, go_slice ids, go_slice old_parties, long new_threshold, go_slice new_parties, tss_buffer setup_msg) {
+    return lib_error.swigToEnum(godklsJNI.dkls_qc_setupmsg_from_key_id(go_slice.getCPtr(key_id), key_id, go_slice.getCPtr(pk), pk, go_slice.getCPtr(ids), ids, go_slice.getCPtr(old_parties), old_parties, new_threshold, go_slice.getCPtr(new_parties), new_parties, tss_buffer.getCPtr(setup_msg), setup_msg));
   }
 
   public static lib_error dkls_qc_session_from_setup(go_slice setup, go_slice id, Handle keyshare, Handle hnd) {

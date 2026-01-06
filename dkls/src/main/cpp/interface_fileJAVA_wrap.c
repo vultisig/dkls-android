@@ -1109,6 +1109,32 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1keyg
 }
 
 
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1keygen_1setupmsg_1new_1with_1rank(JNIEnv *jenv, jclass jcls, jlong jarg1, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_) {
+  jint jresult = 0 ;
+  uint32_t arg1 ;
+  struct go_slice *arg2 = 0 ;
+  struct go_slice *arg3 = 0 ;
+  struct go_slice *arg4 = 0 ;
+  struct tss_buffer *arg5 = 0 ;
+  enum lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg2_;
+  (void)jarg3_;
+  (void)jarg4_;
+  (void)jarg5_;
+  arg1 = (uint32_t)jarg1; 
+  arg2 = *(struct go_slice **)&jarg2; 
+  arg3 = *(struct go_slice **)&jarg3; 
+  arg4 = *(struct go_slice **)&jarg4; 
+  arg5 = *(struct tss_buffer **)&jarg5; 
+  result = (enum lib_error)dkls_keygen_setupmsg_new_with_rank(arg1,(struct go_slice const *)arg2,(struct go_slice const *)arg3,(struct go_slice const *)arg4,arg5);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1keygen_1session_1from_1setup(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_) {
   jint jresult = 0 ;
   struct go_slice *arg1 = 0 ;
@@ -1970,6 +1996,38 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1qc_1
   arg5 = *(struct go_slice **)&jarg5; 
   arg6 = *(struct tss_buffer **)&jarg6; 
   result = (enum lib_error)dkls_qc_setupmsg_new(arg1,(struct go_slice const *)arg2,(struct go_slice const *)arg3,arg4,(struct go_slice const *)arg5,arg6);
+  jresult = (jint)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godkls_godklsJNI_dkls_1qc_1setupmsg_1from_1key_1id(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_, jlong jarg5, jlong jarg6, jobject jarg6_, jlong jarg7, jobject jarg7_) {
+  jint jresult = 0 ;
+  struct go_slice *arg1 = 0 ;
+  struct go_slice *arg2 = 0 ;
+  struct go_slice *arg3 = 0 ;
+  struct go_slice *arg4 = 0 ;
+  uint32_t arg5 ;
+  struct go_slice *arg6 = 0 ;
+  struct tss_buffer *arg7 = 0 ;
+  enum lib_error result;
+  
+  (void)jenv;
+  (void)jcls;
+  (void)jarg1_;
+  (void)jarg2_;
+  (void)jarg3_;
+  (void)jarg4_;
+  (void)jarg6_;
+  (void)jarg7_;
+  arg1 = *(struct go_slice **)&jarg1; 
+  arg2 = *(struct go_slice **)&jarg2; 
+  arg3 = *(struct go_slice **)&jarg3; 
+  arg4 = *(struct go_slice **)&jarg4; 
+  arg5 = (uint32_t)jarg5; 
+  arg6 = *(struct go_slice **)&jarg6; 
+  arg7 = *(struct tss_buffer **)&jarg7; 
+  result = (enum lib_error)dkls_qc_setupmsg_from_key_id((struct go_slice const *)arg1,(struct go_slice const *)arg2,(struct go_slice const *)arg3,(struct go_slice const *)arg4,arg5,(struct go_slice const *)arg6,arg7);
   jresult = (jint)result; 
   return jresult;
 }
