@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "dklsandroid"
 include(":dkls")
 include(":goschnorr")
+include(":dilithium")
