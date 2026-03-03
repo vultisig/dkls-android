@@ -42,30 +42,30 @@ public class tss_buffer {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        godilithiumJNI.delete_tss_buffer(swigCPtr);
+        vscoreJNI.delete_tss_buffer(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public void setPtr(long value) {
-    godilithiumJNI.tss_buffer_ptr_set(swigCPtr, this, value);
+    vscoreJNI.tss_buffer_ptr_set(swigCPtr, this, value);
   }
 
   public long getPtr() {
-    return godilithiumJNI.tss_buffer_ptr_get(swigCPtr, this);
+    return vscoreJNI.tss_buffer_ptr_get(swigCPtr, this);
   }
 
   public void setLen(long value) {
-    godilithiumJNI.tss_buffer_len_set(swigCPtr, this, value);
+    vscoreJNI.tss_buffer_len_set(swigCPtr, this, value);
   }
 
   public long getLen() {
-    return godilithiumJNI.tss_buffer_len_get(swigCPtr, this);
+    return vscoreJNI.tss_buffer_len_get(swigCPtr, this);
   }
 
   public tss_buffer() {
-    this(godilithiumJNI.new_tss_buffer(), true);
+    this(vscoreJNI.new_tss_buffer(), true);
   }
 
 }
