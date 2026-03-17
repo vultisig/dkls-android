@@ -32,7 +32,7 @@ public final class mldsa_error {
   public final static mldsa_error _LIB_INVALID_PUBLIC_KEY = new mldsa_error("_LIB_INVALID_PUBLIC_KEY");
   public final static mldsa_error _LIB_INVALID_PRIVATE_KEY = new mldsa_error("_LIB_INVALID_PRIVATE_KEY");
   public final static mldsa_error LIB_REJSAMPLING = new mldsa_error("LIB_REJSAMPLING");
-  public final static mldsa_error LIB_ABORT_PROTOCOL_PARTY_1 = new mldsa_error("LIB_ABORT_PROTOCOL_PARTY_1", vscoreJNI.LIB_ABORT_PROTOCOL_PARTY_1_get());
+  public final static mldsa_error LIB_ABORT_PROTOCOL_PARTY_1 = new mldsa_error("LIB_ABORT_PROTOCOL_PARTY_1", godilithiumJNI.LIB_ABORT_PROTOCOL_PARTY_1_get());
 
   public final int swigValue() {
     return swigValue;

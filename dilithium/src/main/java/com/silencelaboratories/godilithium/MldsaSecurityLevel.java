@@ -9,9 +9,9 @@
 package com.silencelaboratories.godilithium;
 
 public final class MldsaSecurityLevel {
-  public final static MldsaSecurityLevel MlDsa44 = new MldsaSecurityLevel("MlDsa44", vscoreJNI.MlDsa44_get());
-  public final static MldsaSecurityLevel MlDsa65 = new MldsaSecurityLevel("MlDsa65", vscoreJNI.MlDsa65_get());
-  public final static MldsaSecurityLevel MlDsa87 = new MldsaSecurityLevel("MlDsa87", vscoreJNI.MlDsa87_get());
+  public final static MldsaSecurityLevel MlDsa44 = new MldsaSecurityLevel("MlDsa44", godilithiumJNI.MlDsa44_get());
+  public final static MldsaSecurityLevel MlDsa65 = new MldsaSecurityLevel("MlDsa65", godilithiumJNI.MlDsa65_get());
+  public final static MldsaSecurityLevel MlDsa87 = new MldsaSecurityLevel("MlDsa87", godilithiumJNI.MlDsa87_get());
 
   public final int swigValue() {
     return swigValue;
