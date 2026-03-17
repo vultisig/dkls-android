@@ -42,38 +42,38 @@ public class go_slice {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        vscoreJNI.delete_go_slice(swigCPtr);
+        godilithiumJNI.delete_go_slice(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public void setPtr(long value) {
-    vscoreJNI.go_slice_ptr_set(swigCPtr, this, value);
+    godilithiumJNI.go_slice_ptr_set(swigCPtr, this, value);
   }
 
   public long getPtr() {
-    return vscoreJNI.go_slice_ptr_get(swigCPtr, this);
+    return godilithiumJNI.go_slice_ptr_get(swigCPtr, this);
   }
 
   public void setLen(long value) {
-    vscoreJNI.go_slice_len_set(swigCPtr, this, value);
+    godilithiumJNI.go_slice_len_set(swigCPtr, this, value);
   }
 
   public long getLen() {
-    return vscoreJNI.go_slice_len_get(swigCPtr, this);
+    return godilithiumJNI.go_slice_len_get(swigCPtr, this);
   }
 
   public void setCap(long value) {
-    vscoreJNI.go_slice_cap_set(swigCPtr, this, value);
+    godilithiumJNI.go_slice_cap_set(swigCPtr, this, value);
   }
 
   public long getCap() {
-    return vscoreJNI.go_slice_cap_get(swigCPtr, this);
+    return godilithiumJNI.go_slice_cap_get(swigCPtr, this);
   }
 
   public go_slice() {
-    this(vscoreJNI.new_go_slice(), true);
+    this(godilithiumJNI.new_go_slice(), true);
   }
 
 }
