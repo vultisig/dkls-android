@@ -42,22 +42,22 @@ public class Handle {
     if (swigCPtr != 0) {
       if (swigCMemOwn) {
         swigCMemOwn = false;
-        godilithiumJNI.delete_Handle(swigCPtr);
+        vscoreJNI.delete_Handle(swigCPtr);
       }
       swigCPtr = 0;
     }
   }
 
   public void set_0(int value) {
-    godilithiumJNI.Handle__0_set(swigCPtr, this, value);
+    vscoreJNI.Handle__0_set(swigCPtr, this, value);
   }
 
   public int get_0() {
-    return godilithiumJNI.Handle__0_get(swigCPtr, this);
+    return vscoreJNI.Handle__0_get(swigCPtr, this);
   }
 
   public Handle() {
-    this(godilithiumJNI.new_Handle(), true);
+    this(vscoreJNI.new_Handle(), true);
   }
 
 }

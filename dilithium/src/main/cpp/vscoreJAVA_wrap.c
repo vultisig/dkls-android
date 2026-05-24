@@ -817,7 +817,7 @@ static jdoubleArray SWIG_JavaArrayOutDouble (JNIEnv *jenv, double *result, jsize
 extern "C" {
 #endif
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_MlDsa44_1get(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_MlDsa44_1get(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   enum MldsaSecurityLevel result;
   
@@ -829,7 +829,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_MlDsa65_1get(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_MlDsa65_1get(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   enum MldsaSecurityLevel result;
   
@@ -841,7 +841,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_MlDsa87_1get(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_MlDsa87_1get(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   enum MldsaSecurityLevel result;
   
@@ -853,7 +853,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_LIB_1ABORT_1PROTOCOL_1PARTY_11_1get(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_LIB_1ABORT_1PROTOCOL_1PARTY_11_1get(JNIEnv *jenv, jclass jcls) {
   jint jresult = 0 ;
   enum mldsa_error result;
   
@@ -865,7 +865,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_tss_1buffer_1ptr_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_tss_1buffer_1ptr_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   struct tss_buffer *arg1 = 0 ;
   uint8_t *arg2 = 0 ;
   
@@ -878,7 +878,7 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_tss_1buffer_1ptr_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_tss_1buffer_1ptr_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   struct tss_buffer *arg1 = 0 ;
   uint8_t *result = 0 ;
@@ -893,7 +893,7 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI
 }
 
 
-SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_tss_1buffer_1len_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_tss_1buffer_1len_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   struct tss_buffer *arg1 = 0 ;
   uintptr_t arg2 ;
   
@@ -906,7 +906,7 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_tss_1buffer_1len_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_tss_1buffer_1len_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   struct tss_buffer *arg1 = 0 ;
   uintptr_t result;
@@ -921,7 +921,7 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI
 }
 
 
-SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_new_1tss_1buffer(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_new_1tss_1buffer(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   struct tss_buffer *result = 0 ;
   
@@ -933,7 +933,7 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI
 }
 
 
-SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_delete_1tss_1buffer(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_delete_1tss_1buffer(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   struct tss_buffer *arg1 = 0 ;
   
   (void)jenv;
@@ -943,7 +943,7 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_go_1slice_1ptr_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_go_1slice_1ptr_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   struct go_slice *arg1 = 0 ;
   uint8_t *arg2 = 0 ;
   
@@ -956,7 +956,7 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_go_1slice_1ptr_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_go_1slice_1ptr_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   struct go_slice *arg1 = 0 ;
   uint8_t *result = 0 ;
@@ -971,7 +971,7 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI
 }
 
 
-SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_go_1slice_1len_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_go_1slice_1len_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   struct go_slice *arg1 = 0 ;
   uintptr_t arg2 ;
   
@@ -984,7 +984,7 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_go_1slice_1len_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_go_1slice_1len_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   struct go_slice *arg1 = 0 ;
   uintptr_t result;
@@ -999,7 +999,7 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI
 }
 
 
-SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_go_1slice_1cap_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
+SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_go_1slice_1cap_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2) {
   struct go_slice *arg1 = 0 ;
   uintptr_t arg2 ;
   
@@ -1012,7 +1012,7 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_go_1slice_1cap_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_go_1slice_1cap_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jlong jresult = 0 ;
   struct go_slice *arg1 = 0 ;
   uintptr_t result;
@@ -1027,7 +1027,7 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI
 }
 
 
-SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_new_1go_1slice(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_new_1go_1slice(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   struct go_slice *result = 0 ;
   
@@ -1039,7 +1039,7 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI
 }
 
 
-SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_delete_1go_1slice(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_delete_1go_1slice(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   struct go_slice *arg1 = 0 ;
   
   (void)jenv;
@@ -1049,7 +1049,7 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_Handle_1_10_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
+SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_Handle_1_10_1set(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jint jarg2) {
   struct Handle *arg1 = 0 ;
   int32_t arg2 ;
   
@@ -1062,7 +1062,7 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_Handle_1_10_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_Handle_1_10_1get(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   struct Handle *arg1 = 0 ;
   int32_t result;
@@ -1077,7 +1077,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_new_1Handle(JNIEnv *jenv, jclass jcls) {
+SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_new_1Handle(JNIEnv *jenv, jclass jcls) {
   jlong jresult = 0 ;
   struct Handle *result = 0 ;
   
@@ -1089,7 +1089,7 @@ SWIGEXPORT jlong JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI
 }
 
 
-SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_delete_1Handle(JNIEnv *jenv, jclass jcls, jlong jarg1) {
+SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_delete_1Handle(JNIEnv *jenv, jclass jcls, jlong jarg1) {
   struct Handle *arg1 = 0 ;
   
   (void)jenv;
@@ -1099,7 +1099,7 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_tss_1buffer_1free(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_tss_1buffer_1free(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   struct tss_buffer *arg1 = 0 ;
   
   (void)jenv;
@@ -1110,7 +1110,7 @@ SWIGEXPORT void JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1keygen_1setupmsg_1new(JNIEnv *jenv, jclass jcls, jint jarg1, jlong jarg2, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1keygen_1setupmsg_1new(JNIEnv *jenv, jclass jcls, jint jarg1, jlong jarg2, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_) {
   jint jresult = 0 ;
   enum MldsaSecurityLevel arg1 ;
   uint32_t arg2 ;
@@ -1135,7 +1135,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1keygen_1session_1from_1setup(JNIEnv *jenv, jclass jcls, jint jarg1, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1keygen_1session_1from_1setup(JNIEnv *jenv, jclass jcls, jint jarg1, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_) {
   jint jresult = 0 ;
   enum MldsaSecurityLevel arg1 ;
   struct go_slice *arg2 = 0 ;
@@ -1158,7 +1158,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1keygen_1session_1input_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jintArray jarg3) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1keygen_1session_1input_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jintArray jarg3) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct go_slice *arg2 = 0 ;
@@ -1187,7 +1187,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1keygen_1session_1output_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1keygen_1session_1output_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct tss_buffer *arg2 = 0 ;
@@ -1211,7 +1211,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1keygen_1session_1message_1receiver(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jlong jarg4, jobject jarg4_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1keygen_1session_1message_1receiver(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jlong jarg4, jobject jarg4_) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct go_slice *arg2 = 0 ;
@@ -1240,7 +1240,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1keygen_1session_1finish(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1keygen_1session_1finish(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct Handle *arg2 = 0 ;
@@ -1264,7 +1264,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1keygen_1session_1free(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1keygen_1session_1free(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct Handle *argp1 ;
@@ -1285,7 +1285,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1keyshare_1from_1bytes(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1keyshare_1from_1bytes(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jint jresult = 0 ;
   struct go_slice *arg1 = 0 ;
   struct Handle *arg2 = 0 ;
@@ -1303,7 +1303,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1keyshare_1to_1bytes(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1keyshare_1to_1bytes(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct tss_buffer *arg2 = 0 ;
@@ -1327,7 +1327,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1keyshare_1public_1key(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1keyshare_1public_1key(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct tss_buffer *arg2 = 0 ;
@@ -1351,7 +1351,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1keyshare_1key_1id(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1keyshare_1key_1id(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct tss_buffer *arg2 = 0 ;
@@ -1375,7 +1375,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1keyshare_1free(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1keyshare_1free(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   struct Handle *arg1 = 0 ;
   mldsa_error result;
@@ -1390,7 +1390,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1decode_1key_1id(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1decode_1key_1id(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jint jresult = 0 ;
   struct go_slice *arg1 = 0 ;
   struct tss_buffer *arg2 = 0 ;
@@ -1408,7 +1408,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1decode_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1decode_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jint jresult = 0 ;
   struct go_slice *arg1 = 0 ;
   struct tss_buffer *arg2 = 0 ;
@@ -1426,7 +1426,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1decode_1party_1name(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jlong jarg3, jobject jarg3_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1decode_1party_1name(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jlong jarg3, jobject jarg3_) {
   jint jresult = 0 ;
   struct go_slice *arg1 = 0 ;
   uint32_t arg2 ;
@@ -1446,7 +1446,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1sign_1setupmsg_1new(JNIEnv *jenv, jclass jcls, jint jarg1, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_, jlong jarg6, jobject jarg6_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1sign_1setupmsg_1new(JNIEnv *jenv, jclass jcls, jint jarg1, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_, jlong jarg6, jobject jarg6_) {
   jint jresult = 0 ;
   enum MldsaSecurityLevel arg1 ;
   struct go_slice *arg2 = 0 ;
@@ -1475,7 +1475,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1sign_1session_1from_1setup(JNIEnv *jenv, jclass jcls, jint jarg1, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1sign_1session_1from_1setup(JNIEnv *jenv, jclass jcls, jint jarg1, jlong jarg2, jobject jarg2_, jlong jarg3, jobject jarg3_, jlong jarg4, jobject jarg4_, jlong jarg5, jobject jarg5_) {
   jint jresult = 0 ;
   enum MldsaSecurityLevel arg1 ;
   struct go_slice *arg2 = 0 ;
@@ -1507,7 +1507,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1sign_1session_1input_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jintArray jarg3) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1sign_1session_1input_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jintArray jarg3) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct go_slice *arg2 = 0 ;
@@ -1536,7 +1536,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1sign_1session_1output_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1sign_1session_1output_1message(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct tss_buffer *arg2 = 0 ;
@@ -1560,7 +1560,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1sign_1session_1message_1receiver(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jlong jarg4, jobject jarg4_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1sign_1session_1message_1receiver(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_, jlong jarg3, jlong jarg4, jobject jarg4_) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct go_slice *arg2 = 0 ;
@@ -1589,7 +1589,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1sign_1session_1finish(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1sign_1session_1finish(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_, jlong jarg2, jobject jarg2_) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct tss_buffer *arg2 = 0 ;
@@ -1613,7 +1613,7 @@ SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_
 }
 
 
-SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_godilithiumJNI_mldsa_1sign_1session_1free(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
+SWIGEXPORT jint JNICALL Java_com_silencelaboratories_godilithium_vscoreJNI_mldsa_1sign_1session_1free(JNIEnv *jenv, jclass jcls, jlong jarg1, jobject jarg1_) {
   jint jresult = 0 ;
   struct Handle arg1 ;
   struct Handle *argp1 ;
