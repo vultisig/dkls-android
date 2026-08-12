@@ -94,3 +94,22 @@ Java_com_silencelaboratories_godilithium_BufferUtilJNI_get_1bytes_1from_1go_1sli
     (*env)->SetByteArrayRegion(env, byteArray, 0, len, (const jbyte *) buffer->ptr);
     return byteArray;
 }
+
+JNIEXPORT void JNICALL
+Java_com_silencelaboratories_godilithium_BufferUtilJNI_free_1go_1slice_1payload(JNIEnv *env,
+                                                                                 jobject obj,
+                                                                                 jobject jarg1) {
+    jclass goSliceClass = (*env)->GetObjectClass(env, jarg1);
+    jfieldID ptrField = (*env)->GetFieldID(env, goSliceClass, "swigCPtr", "J");
+    jlong swigCPtr = (*env)->GetLongField(env, jarg1, ptrField);
+
+    go_slice *buffer = (go_slice *) (intptr_t) swigCPtr;
+    if (buffer->ptr == NULL) {
+        return;
+    }
+    memset((void *) buffer->ptr, 0, buffer->len);
+    free((void *) buffer->ptr);
+    buffer->ptr = NULL;
+    buffer->len = 0;
+    buffer->cap = 0;
+}

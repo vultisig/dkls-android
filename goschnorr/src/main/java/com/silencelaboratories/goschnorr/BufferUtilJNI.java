@@ -8,4 +8,6 @@ public class BufferUtilJNI {
     public final static native void set_bytes_on_go_slice(go_slice jarg1, byte[] jarg1_);
 
     public final static native byte[] get_bytes_from_go_slice(go_slice jarg1);
+
+    public final static native void free_go_slice_payload(go_slice jarg1);
 }
